@@ -1,0 +1,111 @@
+body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-family: 'Poppins', sans-serif;
+	position:relative;
+	background: #fff;
+}
+a,
+a:active,
+a:focus,
+button,
+button:focus,
+button:active,
+.btn,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn.active.focus {
+	outline: none;
+	outline: 0;
+}
+ input::-moz-focus-inner {
+ border: 0;
+}
+  @-webkit-keyframes bounce {
+    0%       { bottom:0px; }
+    50%      { bottom:15px; }
+    100%     {bottom:30;}
+  }
+  @-moz-keyframes bounce {
+    0%       { bottom:0px; }
+    50%      { bottom:15px; }
+    100%     {bottom:30;}
+  }
+  @-o-keyframes bounce {
+    0%       { bottom:0px; }
+    50%      { bottom:15px; }
+    100%     {bottom:30;}
+  }
+  @keyframes bounce {
+    0%       { bottom:0px; }
+    50%      { bottom:15px; }
+    100%     {bottom:30;}
+  }
+.clr{
+	clear: both;
+}
+.body_wrapper {width:100%;padding:215px 0 40px;}
+.main_heading {width:100%;margin:0 0 30px;color:#000;font-size:17px;font-weight:600;}
+.inventory_left {width:100%;}
+.inventory_left h3 {margin:0 0 20px;color:#254d7b;font-size:15px;font-weight:600;}
+.inventory_left ul {width:100%;margin:0;padding:0;}
+.inventory_left ul li {list-style:none;display:block;border-bottom:1px solid #eee;padding:12px 0;color:#000;font-size:13px;font-weight:400;}
+/*.inventory_right {width:100%;padding-top: 30px;display:inline-block;overflow-x: scroll;}*/
+.inventory_right {width:100%; padding-top: 30px; display:inline-block;}
+/*.inventory_right_inner {width: 1100px;}*/
+.inventory_right h4.bookable {border-radius:30px; line-height:35px; padding:0; background:#e9fde1; color:#118403; font-size:10px; font-weight:600; margin: 0 0 11px; text-align:center;}
+.inventory_right h4.closed {border-radius:30px; line-height:35px; padding:0; background:#ff6262; color:#fff; font-size:10px; font-weight:600; margin: 0 0 11px; text-align:center;}
+.inventory_right ul.bookable_listing {width:100%; margin:0; padding:0;}
+/* .inventory_right ul.bookable_listing li {list-style:none;width:5%;float:left;border:1px solid #eee;text-align:center;padding:10px;color:#000;font-size:11px;font-weight:400;} */
+.inventory_right ul.bookable_listing li {list-style:none;float:left;border:1px solid #eee;text-align:center;padding:10px;color:#000;font-size:11px;font-weight:400;}
+.inventory_right ul.closed_listing {width:100%;margin:0;padding:0;}
+.inventory_right ul.closed_listing li {list-style:none;width:33.3%;float:left;border:1px solid #eee;text-align:center;padding:10px;color:#000;font-size:14px;font-weight:400;}
+.gap-right {padding-right:0;}
+.gap-left {padding-left:0;}
+.sub_loop {width:100%;margin:0 0 30px;}
+.main_loop {width:100%;margin:0 0 30px;}
+.bulkeditsec {width:100%; padding: 5px 0 0; text-align: right;}
+.bulkeditsec button {width:100px; background:none; border:1px solid #254d7b; color:#254d7b; font-size:15px; text-align:center; padding:10px 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; display:inline-block;}
+/*.top_calendar {width:100%;padding:0;display:inline-block;background:#fff;overflow-x:scroll;}*/
+.top_calendar {width:100%;padding:0;display:inline-block;background:#fff;}
+/*.top_calendar ul {width:100%;float:left;margin:22px 0 0;padding:0;}*/
+/*.top_calendar .top_calendar_inner ul {margin:22px 0 0; padding:0; position:relative;}*/
+.top_calendar .top_calendar_inner{display: flex; align-items: center; width: 100%;}
+.top_calendar .top_calendar_inner ul {margin:22px 0 0; padding:0; display: flex; align-items: center; justify-content: space-between;}
+/*.top_calendar ul li {list-style:none; float:left; color:#000; font-size:10px; font-weight:400; padding: 0 10px; position:relative; width: 5%; text-align: center;}*/
+.top_calendar ul li {list-style:none; color:#000; font-size:11px; font-weight:400; padding: 0 13.5px; position:relative; text-align: center;}
+.top_calendar ul li span {display:block; text-align: center;}
+.top_calendar ul li:first-child {position:absolute; top:0; font-size: 12px; font-weight: 600;}
+/*.top_calendar ul li.month_name_last {position:absolute;top:4px;left: 70%;font-weight: 600;}*/
+/*.top_calendar_inner {width:1170px;;background:#fff;}*/
+.bkl, .cls {float: left;}
+.top_calendar .navbar-fixed-top {top:117px;transition: all 0.5s ease 0s;z-index: 9;right: 0;left: inherit;padding: 20px 0;}
+.navbar-fixed-top.top_calendar {top:0!important;transition: all 0.5s ease 0s;}
+.aviabalites_panel form {margin: 8px 0 0!important;}
+/*.top_calendar_inner ul li:nth-child(2) {left:-15px;}*/
+/*.top_calendar_inner ul li:nth-child(3) {left:-19px;}*/
+/*.top_calendar_inner ul li:nth-child(4) {left:-21px;}*/
+/*.top_calendar_inner ul li:nth-child(5) {left:-27px;}*/
+/*.top_calendar_inner ul li:nth-child(6) {left:-31px;}*/
+/*.top_calendar_inner ul li:nth-child(7) {left:-32px;}*/
+/*.top_calendar_inner ul li:nth-child(8) {left:-37px;}*/
+/*.top_calendar_inner ul li:nth-child(9) {left:-40px;}*/
+/*.top_calendar_inner ul li:nth-child(10) {left:-44px;}*/
+/*.top_calendar_inner ul li:nth-child(11) {left:-48px;}*/
+/*.top_calendar_inner ul li:nth-child(12) {left:-50px;}*/
+/*.top_calendar_inner ul li:nth-child(13) {left:-55px;}*/
+/*.top_calendar_inner ul li:nth-child(14) {left:-60px;}*/
+/*.top_calendar_inner ul li:nth-child(16) {left:-61px;}*/
+/*.top_calendar_inner ul li:nth-child(17) {left:-62px;}*/
+/*.top_calendar_inner ul li:nth-child(18) {left:-67px;}*/
+/*.top_calendar_inner ul li:nth-child(19) {left:29px;}*/
+/*.top_calendar_inner ul li:nth-child(20) {left:28px;}*/
+/*.top_calendar_inner ul li:nth-child(21) {left:23px;}*/
+/*.top_calendar_inner ul li:nth-child(22) {left:20px;}*/
+
+
+
+
