@@ -6510,42 +6510,23 @@ table#listing_base tr td a.tipss {
 .inventory_page_panel .stockBooked {border-bottom: none;}
 .inventory_page_panel .stockCount {border: 1px solid #eee;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.form-inline .form-group-booking {
+    width: 19%;
+    padding: 10px 7px;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.form-control:not(.input-sm):not([multiple="multiple"]) {
+    height: 40px;
+    border-radius: 0;
+    width: 100%;
+}
+.panel-heading .form-inline {
+    width: 100%;
+    display: inline-block;
+    padding: 15px 10px;
+    margin: 0;
+    background: #fff;
+    border-radius: 0;
+}
