@@ -1,11 +1,22 @@
 <?php
+/**
+ * Template of the module listing
+ */
 debug_backtrace() || die('Direct access not permitted');
+// echo "<pre>";
+// print_r($texts);
+// die;
+// Action to perform
 $action = (isset($_GET['action'])) ? htmlentities($_GET['action'], ENT_QUOTES, 'UTF-8') : '';
 if ($action != '' && defined('DEMO') && DEMO == 1) {
     $action = '';
     $_SESSION['msg_error'][] = 'This action is disabled in the demo mode';
 }
+// Item ID
 $id = (isset($_GET['id']) && is_numeric($_GET['id'])) ? $_GET['id'] : 0;
+// echo "<pre>";
+// print_r($permissions);
+// die;
 if (empty($permissions) || $permissions[0] == NULL) {
     //echo '<script> window.location.href = "'.DOCBASE.ADMIN_FOLDER.'/no-access"; </script>';
     header('Location: ' . DOCBASE . ADMIN_FOLDER . '/index.php');
@@ -67,14 +78,10 @@ if ($db !== false) {
         unset($_SESSION['filters']);
         unset($_SESSION['q_search']);
     }
-    $limit = 25;
+    $limit = 500;
     $page = 1;
-    $pageIndex = 0;
     if(isset($_REQUEST['pageNo'])){
         $page = $_REQUEST['pageNo'];
-    }
-    if(isset($_REQUEST['pageIndex'])){
-        $pageIndex = $_REQUEST['pageIndex'];
     }
     if (isset($_REQUEST['search'])) {
         foreach ($filters as $filter) {
@@ -94,24 +101,19 @@ if ($db !== false) {
                 if(isset($_SESSION['pageNo'])){
                     if($_SESSION['pageNo'] == ''){
                         $page = 1;
-                        $pageIndex = 0;
                     }else{
                         if(isset($_REQUEST['pageNo'])){
                             if($_SESSION['pageNo'] == '' || $_SESSION['pageNo'] == 1){
                                 $page = 1;
-                                $pageIndex = 0;
                             }else{
                                 $page = $_REQUEST['pageNo'];
-                                $pageIndex = $_REQUEST['pageIndex'];
                             }
                         }else{
                             $page = 1;
-                            $pageIndex = 0;
                         }
                     }
                 }else{
                     $page = 1;
-                    $pageIndex = 0;
                     $_SESSION['pageNo'] = $page;
                 }
             }else{
@@ -123,10 +125,10 @@ if ($db !== false) {
         //if (isset($_SESSION['q_search'])) $q_search = $_SESSION['q_search'];
     }
     $offset = ($page - 1) * $limit;
-    // $prevListFrom = ($page - 2) * $limit;
-    // $prevListTo = ($page - 1) * $limit;
-    // $nextListFrom = $page * $limit;
-    // $nextListTo = ($page + 1) * $limit;
+    $prevListFrom = ($page - 2) * $limit;
+    $prevListTo = ($page - 1) * $limit;
+    $nextListFrom = $page * $limit;
+    $nextListTo = ($page + 1) * $limit;
     // Getting items in the database
     $condition = '';
     // if ($id_destination > 0) {
@@ -296,8 +298,7 @@ $csrf_token = get_token('list'); ?>
                         <div class="form_wrapper">
                             <form id="form" action="index.php?view=list" method="get" class="genericForm">
                                 <input type="hidden" name="view" value="list" />
-                                <input type="hidden" name="pageNo" id="pageNo" value="<?=$page?>" />
-                                <input type="hidden" name="pageIndex" id="pageIndex" value="<?=$pageIndex?>" />
+                                <input type="hidden" name="pageNo" id="pageNo" value="<?=$page+1?>" />
                                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>" />
                                 <div class="panel panel-default">
                                     <div class="panel-heading form-inline clearfix">
@@ -827,36 +828,21 @@ $csrf_token = get_token('list'); ?>
                                                 //     $totalPage = ($total / $limit);
                                                 // }
                                                 $totalPage = ceil($total / $limit);
-                                                //echo $totalPage; die; // 63
                                             ?>
                                             <div class="row">
                                                 <div class="col-sm-12 text-center">
                                                     <div class="dataTables_paginate paging_simple_numbers">
                                                         <ul class="pagination">
-                                                        <?php
-                                                            if($pageIndex != 0){
-                                                        ?>
+                                                        <?php if($page != 1) { ?>
                                                             <li class="paginate_button">
-                                                                <a href="javascript:void(0);" onclick="doPaginationIndex('<?=$pageIndex-1?>')"><< Previous</a>
+                                                                <a href="javascript:void(0);" onclick="doPagination('previous')"><?=$prevListFrom.' - '.$prevListTo?></a>
                                                             </li>
-                                                        <?php
-                                                        }
-                                                        $maxRes = ($totalPage >= (($pageIndex * 10) + 10)) ? ($pageIndex * 10) + 10 : $totalPage;
-                                                        for($i = ($pageIndex * 10) + 1; $i <= $maxRes ; $i++){
-                                                        ?>
-                                                            <li class="paginate_button">
-                                                                <a href="javascript:void(0);" onclick="doPagination('<?=$i?>')" <?php if($page == $i){ print 'style="background-color: #eae9e9;"'; }?>><?=$i?></a>
+                                                        <?php } ?>
+                                                        <?php if($page != $totalPage){ ?>
+                                                            <li class="paginate_button" id="listing_base_next">
+                                                                <a href="javascript:void(0);" onclick="doPagination('next')"><?=$nextListFrom.' - '.$nextListTo?></a>
                                                             </li>
-                                                        <?php
-                                                        }
-                                                        if( (($pageIndex+1)*10) < $totalPage){
-                                                        ?>
-                                                        <li class="paginate_button">
-                                                                <a href="javascript:void(0);" onclick="doPaginationIndex('<?=$pageIndex+1?>')">Next >></a>
-                                                            </li>
-                                                        <?php
-                                                        }
-                                                        ?>
+                                                        <?php } ?>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -979,11 +965,11 @@ $csrf_token = get_token('list'); ?>
     <?php include(SYSBASE . ADMIN_FOLDER . '/modules/default/nav_script.php'); ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            // $('#listing_base').DataTable({
-            //     "pageLength": 25,
-            //     "searching": false,
-            //     //"dom": '<"top"i>rt<"bottom"flp><"clear">'
-            // });
+            $('#listing_base').DataTable({
+                "pageLength": 25,
+                "searching": false,
+                //"dom": '<"top"i>rt<"bottom"flp><"clear">'
+            });
         if($('.datepicker').length){
             $('.datepicker').datepicker({
                 dateFormat: 'yy-mm-dd',
@@ -1006,16 +992,14 @@ $csrf_token = get_token('list'); ?>
             });
         });
     });
-    function doPagination(pageNo){
-        $('#pageNo').val(pageNo);
+    function doPagination(mode){
+        if(mode == 'previous'){
+            var pg = parseInt($('#pageNo').val()) - parseInt(2);
+            $('#pageNo').val(pg);
+        }
         $('.genericForm').submit();
     }
-    function doPaginationIndex(pageIndex){
-        $('#pageNo').val((parseInt(pageIndex) * parseInt(10)) + parseInt(1));
-        $('#pageIndex').val(pageIndex);
-        $('.genericForm').submit();
-    }
-    
+
     </script>
 </body>
 </html>
