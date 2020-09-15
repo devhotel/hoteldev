@@ -6518,9 +6518,9 @@ table#listing_base tr td a.tipss {
     vertical-align: middle;
 }
 .form-control:not(.input-sm):not([multiple="multiple"]) {
-    height: 40px !important;
-    border-radius: 0 !important;
-    width: 100% !important;
+    height: 40px;
+    border-radius: 0;
+    width: 100%;
 }
 .panel-heading .form-inline {
     width: 100%;
@@ -6533,4 +6533,10 @@ table#listing_base tr td a.tipss {
 .form-inline .form-group label, .form-inline .form-group-booking label {
   width: 100%;
   display: block;
+}
+.form-inline .form-group input, .form-inline .form-group select, .form-inline .form-group-booking input, .form-inline .form-group-booking select {
+  width: 100% !important;
+  background: #fff;
+  border: 1px solid#c1dcfc;
+  box-shadow: inherit;
 }
