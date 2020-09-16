@@ -310,24 +310,15 @@ if ($result_budget_hotel !== false) {
                 $result_room_rate->execute();
                 if ($result_room_rate !== false && $db->last_row_count() > 0) {
                     $row = $result_room_rate->fetch();
-
-
-                    echo gmdate('Y-m-d H:i:s', $from_time);
-
-                    die;
-
-
-                    $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
-                    $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
-                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $price;
-                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $price;
-                    if ($price > 0):
-                        $min_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price);
+                    $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
+                    $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
+                    $prc = $row['min_price'];
+                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $prc;
+                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $prc;
+                    if ($prc > 0):
+                        $min_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $prc) ? $newMinDiscPrice : $prc) : (($newMinPrice < $prc) ? $newMinPrice : $prc);
                     endif;
-
-
-
-                    if ($row['min_price'] > 0) $room_price = $row['min_price'];;
+                    //if ($row['min_price'] > 0) $room_price = $row['min_price'];
                 }
                 if (
                     !isset($res_hotel[$id_hotel][$id_room])
