@@ -91,6 +91,10 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                 $result_hotel_file = $db->prepare('SELECT * FROM pm_hotel_file WHERE id_item = :hotel_id AND checked = 1 AND lang = ' . DEFAULT_LANG . ' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
                 $result_hotel_file->bindParam(':hotel_id', $hotel_id);
                 //$result_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_rate WHERE id_hotel = :hotel_id');
+
+
+                echo "ok"; die;
+
                 $result_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id_hotel = :hotel_id');
                 $result_rate->bindParam(':hotel_id', $hotel_id);
                 foreach ($result_hotel as $i => $row) {
