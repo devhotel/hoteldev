@@ -99,9 +99,9 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                 $newMinPriceQ       = $db->query('SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
                 $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : '0';
                 $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_price'])) ? $newMinDiscPriceQ['new_price'] : '0';
-                print_r($newMinPrice); 
-                print_r($newMinDiscPrice); 
-                die;
+                // print_r($newMinPrice); 
+                // print_r($newMinDiscPrice); 
+                // die;
 
 
                 foreach ($result_hotel as $i => $row) {
