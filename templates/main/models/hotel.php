@@ -1,11 +1,5 @@
 <?php global $res_room;
 if ($article_alias == '') err404();
-
-
-echo "ok"; die;
-
-
-
 $result = $db->query('SELECT * FROM pm_hotel WHERE checked = 1 AND lang = ' . LANG_ID . ' AND alias = ' . $db->quote($article_alias));
 if ($result !== false && $db->last_row_count() == 1) {
     $hotel = $result->fetch(PDO::FETCH_ASSOC);
@@ -16,15 +10,11 @@ if ($result !== false && $db->last_row_count() == 1) {
     $page_title = $hotel['title'];
     $page_subtitle = '';
     $page_alias = $pages[$page_id]['alias'] . '/' . text_format($hotel['alias']);
-
     $result_hotel_file = $db->query('SELECT * FROM pm_hotel_file WHERE id_item = ' . $hotel_id . ' AND checked = 1 AND lang = ' . DEFAULT_LANG . ' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
     if ($result_hotel_file !== false && $db->last_row_count() > 0) {
-
         $row = $result_hotel_file->fetch();
-
         $file_id = $row['id'];
         $filename = $row['file'];
-
         if (is_file(SYSBASE . 'medias/hotel/medium/' . $file_id . '/' . $filename))
             $page_img = getUrl(true) . DOCBASE . 'medias/hotel/medium/' . $file_id . '/' . $filename;
     }
@@ -39,19 +29,14 @@ if ($result !== false && $db->last_row_count() == 1) {
     if (isset($_REQUEST['num_adults']) && is_numeric($_REQUEST['num_adults'])) $_SESSION['num_adults'] = $_REQUEST['num_adults'];
     elseif (isset($_SESSION['book']['adults'])) $_SESSION['num_adults'] = $_SESSION['book']['adults'];
     elseif (!isset($_SESSION['num_adults'])) $_SESSION['num_adults'] = 1;
-
     /********** Num children ***********/
     if (isset($_REQUEST['num_children']) && is_numeric($_REQUEST['num_children'])) $_SESSION['num_children'] = $_REQUEST['num_children'];
     elseif (isset($_SESSION['book']['children'])) $_SESSION['num_children'] = $_SESSION['book']['children'];
     elseif (!isset($_SESSION['num_children'])) $_SESSION['num_children'] = 0;
-
-
     /*********** Num adults ************/
     if (isset($_REQUEST['num_room']) && is_numeric($_REQUEST['num_room'])) $_SESSION['num_room'] = $_REQUEST['num_room'];
     elseif (isset($_SESSION['book']['num_room'])) $_SESSION['num_room'] = $_SESSION['book']['num_room'];
     elseif (!isset($_SESSION['num_room'])) $_SESSION['num_room'] = 1;
-
-
     /*********** Num room ************/
     if (isset($_REQUEST['ab']) && is_array($_REQUEST['ab'])) $_SESSION['ab'] = $_REQUEST['ab'];
     elseif (isset($_SESSION['book']['ab'])) $_SESSION['ab'] = $_SESSION['book']['ab'];
@@ -59,26 +44,16 @@ if ($result !== false && $db->last_row_count() == 1) {
         $_SESSION['ab']['adlts'][] = 1;
         $_SESSION['ab']['kids'][] = 0;
     }
-    //echo max($_SESSION["ab"]["adlts"]);
-    //echo max($_SESSION["ab"]["kids"]);
-    // echo '<pre>';
-    //    var_dump($_SESSION);
-    //   echo '</pre>';
-
     /****** Check in / out date ********/
     if (isset($_SESSION['from_date'])) $from_time = $_SESSION['from_date'];
     else $from_time = gmtime();
-
     if (isset($_SESSION['to_date'])) $to_time = $_SESSION['to_date'];
     else $to_time = gmtime() + 86400;
-
     if (isset($_REQUEST['from_date']) && !empty($_REQUEST['from_date'])) $_SESSION['from_date'] = htmlentities($_REQUEST['from_date'], ENT_QUOTES, 'UTF-8');
     elseif (!isset($_SESSION['from_date'])) $_SESSION['from_date'] = gmdate('d/m/Y', $from_time);
-
     if (isset($_REQUEST['to_date']) && !empty($_REQUEST['to_date'])) $_SESSION['to_date'] = htmlentities($_REQUEST['to_date'], ENT_QUOTES, 'UTF-8');
     elseif (!isset($_SESSION['to_date'])) $_SESSION['to_date'] = gmdate('d/m/Y', $to_time);
     $num_people = $_SESSION['num_adults'] + $_SESSION['num_children'];
-
     if (!is_numeric($_SESSION['num_adults'])) $field_notice['num_adults'] = $texts['REQUIRED_FIELD'];
     if (!is_numeric($_SESSION['num_children'])) $field_notice['num_children'] = $texts['REQUIRED_FIELD'];
     if ($_SESSION['from_date'] == '') $field_notice['dates'] = $texts['REQUIRED_FIELD'];
@@ -95,16 +70,13 @@ if ($result !== false && $db->last_row_count() == 1) {
         if (!is_numeric($time)) $field_notice['dates'] = $texts['REQUIRED_FIELD'];
         else $to_time = $time;
     }
-
     $today = gm_strtotime(gmdate('Y') . '-' . gmdate('n') . '-' . gmdate('j') . ' 00:00:00');
-
     if ($from_time < $today || $to_time < $today || $to_time <= $from_time) {
         $from_time = $today;
         $to_time = $today + 86400;
         $_SESSION['from_date'] = gmdate('d/m/Y', $from_time);
         $_SESSION['to_date'] = gmdate('d/m/Y', $to_time);
     }
-
     if (is_numeric($from_time) && is_numeric($to_time)) {
         $num_nights = ($to_time - $from_time) / 86400;
     } else
@@ -121,9 +93,7 @@ if ($result !== false && $db->last_row_count() == 1) {
             else $_SESSION['res_hotel'] = $res_hotel;
         }
     }
-
     $search_offset = (isset($_GET['offset']) && is_numeric($_GET['offset'])) ? $_GET['offset'] : 0;
-
     $id_room = 0;
     $result_room_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_rate WHERE id_room = :id_room');
     $result_room_rate->bindParam(':id_room', $id_room);
@@ -256,6 +226,11 @@ if ($result !== false && $db->last_row_count() == 1) {
     $query_hotel .= ' LIMIT ' . $search_limit . ' OFFSET ' . $search_offset;
 
     $result_hotel = $db->query($query_hotel);
+
+
+    echo "ok"; die;
+
+
 } else err404();
 
 //echo check_URI(DOCBASE.$page_alias);
