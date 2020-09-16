@@ -128,7 +128,7 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                                         </div>
                                         <div class="more-content">
                                             <?php
-                                            if ($min_price > 0) { ?>
+                                            if ($min_price > 0) : ?>
                                                 <div class="more-descr">
                                                     <h3 itemprop="name"><?php echo $hotel_title; ?></h3>
                                                     <div class="price">
@@ -139,8 +139,9 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                                                     </div>
                                                     <small><?php echo $texts['PRICE'] . ' / ' . $texts['NIGHT']; ?></small>
                                                 </div>
-                                            <?php
-                                            } ?>
+                                            <?php else: ?>
+                                                <small>No Rooms Available</small>
+                                            <?php endif; ?>
                                         </div>
                                         <div class="more-action">
                                             <div class="more-icon">
