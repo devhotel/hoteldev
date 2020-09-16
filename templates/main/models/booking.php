@@ -316,11 +316,11 @@ if ($result_budget_hotel !== false) {
                     $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $prc;
                     $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $prc;
                     if ($prc > 0):
-                        $min_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $prc) ? $newMinDiscPrice : $prc) : (($newMinPrice < $prc) ? $newMinPrice : $prc);
+                        $room_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $prc) ? $newMinDiscPrice : $prc) : (($newMinPrice < $prc) ? $newMinPrice : $prc);
                     endif;
 
 
-                    echo $min_price; die;
+                    //echo $room_price; die;
                     //if ($row['min_price'] > 0) $room_price = $row['min_price'];
                 }
                 if (
