@@ -312,7 +312,7 @@ if ($result_budget_hotel !== false) {
                     $row = $result_room_rate->fetch();
 
 
-                    echo $_SESSION['from_date'] . ' '. $_SESSION['to_date'];
+                    echo date_format(date_create($_SESSION['from_date']), 'Y-m-d') . ' '. $_SESSION['to_date'];
 
                     die;
 
