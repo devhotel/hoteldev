@@ -60,7 +60,7 @@ if ($result_slide !== false) {
 <?php
 $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER BY id DESC ')->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<section class="top_testimonial">
+<!-- <section class="top_testimonial">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <?php for ($i = 0; $i < count($testimonial); $i++) { ?>
@@ -79,7 +79,7 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
             <?php } ?>
         </div>
     </div>
-</section>
+</section> -->
 <?php echo "ok"; die; ?>
 <section id="content" class="pt20 pb30">
     <div class="container">
