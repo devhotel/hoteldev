@@ -39,7 +39,7 @@ if (isset($_REQUEST['accommodation_id']) && is_numeric($_REQUEST['accommodation_
 }
 ?>
 <div class="side_search">
-    <form id="form_search" action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="get" class="booking-search">
+    <form id="form_search" action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="post" class="booking-search">
         <?php
         if (isset($hotel_id)) { ?>
             <input type="hidden" name="hotel_id" value="<?php echo $hotel_id; ?>">
