@@ -1,5 +1,11 @@
 <?php global $res_room;
 if ($article_alias == '') err404();
+
+
+echo "ok"; die;
+
+
+
 $result = $db->query('SELECT * FROM pm_hotel WHERE checked = 1 AND lang = ' . LANG_ID . ' AND alias = ' . $db->quote($article_alias));
 if ($result !== false && $db->last_row_count() == 1) {
     $hotel = $result->fetch(PDO::FETCH_ASSOC);
