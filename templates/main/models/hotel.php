@@ -837,7 +837,7 @@ require(getFromTemplate('common/header.php', false));
         });
         var sync1 = $("#sync1");
         var sync2 = $("#sync2");
-        sync1.owlCarousel({
+        /*sync1.owlCarousel({
             singleItem: true,
             autoPlay: false,
             slideSpeed: 1000,
@@ -858,7 +858,7 @@ require(getFromTemplate('common/header.php', false));
             afterInit: function(el) {
                 el.find(".owl-item").eq(0).addClass("synced");
             }
-        });
+        });*/
         var syncRoom1 = $(".sync_room1");
         var syncRoom2 = $(".sync_room2");
         syncRoom1.owlCarousel({
