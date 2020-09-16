@@ -531,7 +531,7 @@ require(getFromTemplate('common/header.php', false)); ?>
 <!--color="e34524" bolt-logo="<?= getFromTemplate('images/logo.png') ?>"></script>-->
 <!-- <script id="bolt" src="https://sboxcheckout-static.citruspay.com/bolt/run/bolt.min.js" bolt-color="e34524" bolt-logo="https://guptahotels.com/templates/gupta/images/logo.png"></script> -->
 <!-- PAYUMONEY BOLT Production/Live //-->
-<script id="bolt" src="https://checkout-static.citruspay.com/bolt/run/bolt.min.js" bolt-color="e34524" bolt-logo="https://devhotel.fitser.com/templates/gupta/images/logo.png"></script>
+<script id="bolt" src="https://checkout-static.citruspay.com/bolt/run/bolt.min.js" bolt-color="e34524" bolt-logo="https://devhotel.fitser.com/templates/main/images/logo.png"></script>
 <section id="page">
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
     <div id="content" class="pt30 pb30">

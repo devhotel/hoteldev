@@ -348,7 +348,7 @@ $msg_error = '';
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<div id="mapWrapper" data-marker="<?php echo getFromTemplate('../../templates/gupta/images/marker.png'); ?>"></div>
+								<div id="mapWrapper" data-marker="<?php echo getFromTemplate('../../templates/main/images/marker.png'); ?>"></div>
 							</div>
 						</div>
 					</div>

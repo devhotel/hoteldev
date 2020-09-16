@@ -50,8 +50,8 @@ require_once("../../../../common/define.php");
                     <p style="margin: 0 0 10px;">Kindly <a href="'.getUrl(true).DOCBASE.'login" style="color: #00767b;text-align: center;font-weight: bold;display: inline-block;">log-in</a> to continue</p>
                  </td></tr>';
                 $email = $sign_user;
-                $from_email ='welcome@guptahotels.com';
-                $from_name = 'Gupta Hotels';
+                $from_email ='welcome@hms.com';
+                $from_name = 'HMS';
                 if(sendMail($email, $name, 'Welcome to '.SITE_TITLE , $mailContent,'','',$from_email,$from_name) !== false){
                     $response['success'] = 'success';
                     $response['user_id'] = $nuid; 

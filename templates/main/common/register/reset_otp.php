@@ -19,8 +19,8 @@ $response = array("html" => "", "notices" => array(), "error" => "", "success" =
                     <p style="margin: 0 0 10px;">OTP is '.$otp_pass.' to reset Password into Your '.SITE_TITLE.' account. Please do not share it with anyone.</p>
                  </td></tr>';
                 $email = $loguser;
-                $from_email ='welcome@guptahotels.com';
-                $from_name = 'Gupta Hotels';
+                $from_email ='welcome@hms.com';
+                $from_name = 'HMS';
                 if(sendMail($email, $name, 'Reset password '.SITE_TITLE, $mailContent,'','',$from_email,$from_name) !== false){
                     $response['success'] = "Please Verify OTP for reset  password.";
                     $response['user_id'] = $row['id']; 

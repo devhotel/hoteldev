@@ -148,7 +148,7 @@ require(getFromTemplate("common/header.php", false)); ?>
         var id_location = destination.val();
         hotels.empty();
         $.ajax({
-            url: '/templates/gupta/include/get_hotel.php',
+            url: '/templates/main/include/get_hotel.php',
             type: 'POST',
             data: {
                 id_location: id_location

@@ -517,7 +517,7 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
             <div class="modal-body">
                 <h2>We have launched our mobile application</h2>
                 <a href="http://shorturl.at/jwS46" target="_blank">
-                    <p>Here is the link to download <br><img src="/templates/gupta/images/google-play-icon.png"></p>
+                    <p>Here is the link to download <br><img src="/templates/main/images/google-play-icon.png"></p>
                 </a>
             </div>
         </div>

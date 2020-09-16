@@ -597,7 +597,7 @@ $(window).scroll(function() {
         //alert(data.email);
         $.ajax({
           type: "POST",
-          url: "<?php echo base_url('/templates/gupta/common/register/facebook_callback.php'); ?>",
+          url: "<?php echo base_url('/templates/main/common/register/facebook_callback.php'); ?>",
           data: data,
           cache: false,
           success: function(response) {
@@ -666,7 +666,7 @@ $(window).scroll(function() {
         var sign_user = resp.email;
         //alert(resp.email);
         $.ajax({
-          url: "<?php echo base_url('/templates/gupta/common/register/google_callback.php'); ?>",
+          url: "<?php echo base_url('/templates/main/common/register/google_callback.php'); ?>",
           type: "POST",
           cache: false,
           data: {
