@@ -606,12 +606,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'confirm') { ?>
                                                 <?php
                                                 if (isset($hotel_prices[$id_hotel]) && $hotel_prices[$id_hotel] > 0) { ?>
                                                     <?php
-                                                    $hotel_regular_price = $base_hotel_prices[$id_hotel];
+                                                    @$hotel_regular_price = $base_hotel_prices[$id_hotel];
+                                                    $defaultMinPriceQ   = $db->query("SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id_hotel = '" . $id_hotel . "'")->fetch(PDO::FETCH_ASSOC);
+                                                    $defaultMinPrice = $defaultMinPriceQ['min_price'];
                                                     $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
                                                     $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
-                                                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $hotel_regular_price;
-                                                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $hotel_regular_price;
-                                                    $newMinDiscPrice = ($newMinDiscPrice < $hotel_prices[$id_hotel]) ? $newMinDiscPrice : $hotel_prices[$id_hotel];
+                                                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $defaultMinPrice;
+                                                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $defaultMinPrice;
+                                                    //$newMinDiscPrice = ($newMinDiscPrice < $hotel_prices[$id_hotel]) ? $newMinDiscPrice : $hotel_prices[$id_hotel];
+                                                    $newMinDiscPrice = ($newMinDiscPrice < $defaultMinPrice) ? $newMinDiscPrice : $defaultMinPrice;
                                                     if ($newMinDiscPrice < $newMinPrice) { ?>
                                                         <del><?php echo formatPrice($newMinPrice * CURRENCY_RATE); ?></del>
                                                     <?php } ?>                                                    
