@@ -383,6 +383,9 @@ require(getFromTemplate('common/header.php', false));
                                                 $num_room = $_SESSION['num_room'];
                                             }
                                             foreach ($result_room as $row) {
+                                                $oldRoomStock = $row['stock'];
+                                                echo $oldRoomStock; die;
+
                                                 if (array_key_exists($row['id'], $room_prices) && $_SESSION['num_room'] <= $row['stock']) {
                                                     $id_room = $row['id'];
                                                     $room_title = $row['title'];
