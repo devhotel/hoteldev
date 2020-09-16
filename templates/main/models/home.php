@@ -101,14 +101,14 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                     $min_price = 0;
                     $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $hotel_id . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
                     $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $hotel_id . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
-                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : '0';
-                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : '0';
                     if ($result_rate->execute() !== false && $db->last_row_count() > 0) {
                         $row = $result_rate->fetch();
                         $price = $row['min_price'];
+                        $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $price;
+                        $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $price;
                         if ($price > 0):
-                            $min_price = ($newMinPrice != 0 || $newMinDiscPrice != 0) ? (($newMinDiscPrice <= $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price)) : $price;
-                            echo $newMinPrice . '  ' . $newMinDiscPrice; die;
+                            $min_price = ($newMinDiscPrice <= $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price);
+                            //echo $newMinPrice . '  ' . $newMinDiscPrice; die;
                         endif;
                     } ?>
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
