@@ -603,7 +603,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'confirm') { ?>
             <div class="row">
                 <div class="col-md-2">
                     <div class="sidebar left-affix" id="sidebar" data-spy="affix" data-offset-top="205" data-offset-bottom="240">
-                        <?php include(getFromTemplate('common/search-side.php', false)); ?>
+                        <?php include(getFromTemplate('common/search-side.php', false)); echo "sdsdsd"; die;?>
                     </div>
                 </div>
                 <div class="col-md-10">
