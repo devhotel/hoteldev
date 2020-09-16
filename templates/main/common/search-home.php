@@ -6,41 +6,32 @@ $result_adult->execute();
 $result_children->execute();
 $max_adults_search = $result_adult->fetch()['max_adults_qty'];
 $max_children_search = $result_children->fetch()['max_child_qty'];
-
 if (!isset($_SESSION['destination_id'])) $_SESSION['destination_id'] = 0;
 if (!isset($destination_name)) $destination_name = '';
-
 if (!isset($_SESSION['num_adults']))
     $_SESSION['num_adults'] = (isset($_SESSION['book']['adults'])) ? $_SESSION['book']['adults'] : 1;
 if (!isset($_SESSION['num_children']))
     $_SESSION['num_children'] = (isset($_SESSION['book']['children'])) ? $_SESSION['book']['children'] : 0;
 if (!isset($_SESSION['num_room']))
     $_SESSION['num_room'] = (isset($_SESSION['book']['num_room'])) ? $_SESSION['book']['num_room'] : 1;
-
-
 $from_date = (isset($_SESSION['from_date'])) ? $_SESSION['from_date'] : date('d/m/Y');
 $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('d/m/Y', strtotime(' +1 day'));
 $_SESSION['from_date'] = $from_date;
 $_SESSION['to_date'] = $to_date;
-
 if (isset($_REQUEST['ab']) && is_array($_REQUEST['ab'])) $_SESSION['ab'] = $_REQUEST['ab'];
 elseif (isset($_SESSION['book']['ab'])) $_SESSION['ab'] = $_SESSION['book']['ab'];
 elseif (!isset($_SESSION['ab'])) {
     $_SESSION['ab']['adlts'][] = 1;
     $_SESSION['ab']['kids'][] = 0;
 }
-
 $adultsOpthtml = "";
 for ($i = 1; $i <= $max_adults_search; $i++) {
-
     if ($i == 1) {
         $adultsOpthtml .= '<option value="' . $i . '">' . $i . ' Adult </option>';
     } else {
         $adultsOpthtml .= '<option value="' . $i . '">' . $i . ' Adults </option>';
     }
 }
-
-
 $KidsOpthtml = "";
 $KidsOpthtml .= '<option value="0">Kid</option>';
 for ($i = 1; $i <= $max_children_search; $i++) {
@@ -69,7 +60,6 @@ $markup .= '</div>';
     <?php } ?>
     <div class="page_search">
         <div class="row">
-
             <div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="input-wrapper form-inline" id="input_destination">
                     <!-- <i class="fas fa-fw fa-map-marker"></i>/--><i class="fa fa-bed"></i>
@@ -81,7 +71,6 @@ $markup .= '</div>';
                 </div>
                 <ul class="suggest_list"></ul>
             </div>
-
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="input-wrapper datepicker-wrapper form-inline">
                     <i class="fas fa-fw fa-calendar hidden-xs"></i>
@@ -95,11 +84,6 @@ $markup .= '</div>';
                 </div>
                 <div class="field-notice" rel="dates"></div>
             </div>
-            <?php
-            //echo '<pre>';
-            //print_r($_SESSION['ab']);
-            //echo '</pre>';
-            ?>
             <div class="col-md-4 col-sm-3 col-xs-12">
                 <input type="hidden" id="num_adults" name="num_adults" value="1" />
                 <input type="hidden" id="num_children" name="num_children" value="0" />
@@ -108,9 +92,7 @@ $markup .= '</div>';
                 <?php } else { ?>
                     <input type="hidden" id="num_rooms" name="num_room" value="1" />
                 <?php } ?>
-
                 <input type="hidden" id="num_guests" name="noguests" value="1" />
-
                 <div class="form-group">
                     <div class="input-room-row" id="input_room_row">
                         <?php
@@ -184,47 +166,14 @@ $markup .= '</div>';
                                     </div>
                                 </div>
                             <?php } ?>
-
-
                         </div>
                         <div class="addRoomAlert"></div>
                         <div class="room-action"><a href="javascript:void(0);" class="add-row">ADD ROOM</a><a href="javascript:void(0);" class="confirm">CONFIRM</a></div>
                     </div>
                 </div>
             </div>
-
             <input type="hidden" name="class_range" value="0-10">
             <input type="hidden" name="price_range" value="0-999999">
-            <!--<div class="col-md-2 col-sm-6 col-xs-6">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><?php echo $texts['ADULTS']; ?></div>
-                    <select name="num_adults" class="selectpicker form-control">
-                        <?php
-                        for ($i = 1; $i <= $max_adults_search; $i++) {
-                            $select = ($_SESSION['num_adults'] == $i) ? ' selected="selected"' : '';
-                            echo '<option value="' . $i . '"' . $select . '>' . $i . '</option>';
-                        } ?>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <input type="hidden" name="num_children" value="0" />
-         <div class="col-md-2 col-sm-6 col-xs-6">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><?php echo $texts['ROOM']; ?></div>
-                    <select name="num_room" class="selectpicker form-control">
-                        <?php
-                        for ($i = 0; $i <= $max_children_search; $i++) {
-                            $select = ($_SESSION['num_room'] == $i) ? ' selected="selected"' : '';
-                            echo '<option value="' . $i . '"' . $select . '>' . $i . '</option>';
-                        } ?>
-                    </select>
-                </div>
-            </div>
-        </div>
-        -->
             <div class="col-md-1 col-sm-1 col-xs-12">
                 <div class="form-group">
                     <button class="btn btn-block btn-primary" type="button" name="check_availabilities" id="check_availabilities">GO</button>
