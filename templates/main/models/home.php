@@ -95,8 +95,8 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                 $result_rate->bindParam(':hotel_id', $hotel_id);
 
 
-                $newMinPrice = $db->query('SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetchAll(PDO::FETCH_ASSOC);
-                $newMinDiscPrice = $db->query('SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetchAll(PDO::FETCH_ASSOC);
+                $newMinPrice = $db->query('SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
+                $newMinDiscPrice = $db->query('SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
 
                 print_r($newMinPrice); 
                 print_r($newMinDiscPrice); 
