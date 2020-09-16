@@ -105,11 +105,10 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                     $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : '0';
                     if ($result_rate->execute() !== false && $db->last_row_count() > 0) {
                         $row = $result_rate->fetch();
-                        print_r($row); die;
                         $price = $row['min_price'];
-                        
                         if ($price > 0):
                             $min_price = ($newMinPrice != 0 || $newMinDiscPrice != 0) ? (($newMinDiscPrice <= $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price)) : $price;
+                            echo $min_price; die;
                         endif;
                     } ?>
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
