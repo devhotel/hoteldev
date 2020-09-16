@@ -612,7 +612,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'confirm') { ?>
                                                     $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $hotel_regular_price;
                                                     $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $hotel_regular_price;
                                                     $newMinDiscPrice = ($newMinDiscPrice < $hotel_prices[$id_hotel]) ? $newMinDiscPrice : $hotel_prices[$id_hotel];
-                                                    if ($newMinDiscPrice > $newMinPrice) { ?>
+                                                    if ($newMinDiscPrice < $newMinPrice) { ?>
                                                         <del><?php echo formatPrice($newMinPrice * CURRENCY_RATE); ?></del>
                                                     <?php } ?>                                                    
                                                     <br />
