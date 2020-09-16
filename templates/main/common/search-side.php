@@ -178,7 +178,7 @@ if (isset($_REQUEST['accommodation_id']) && is_numeric($_REQUEST['accommodation_
         } ?>
 <input type="hidden" name="check_availabilities" value="">
 </form>
-<form id="form_reset" action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="post" class="booking-search">
+<form id="form_reset" action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="get" class="booking-search">
     <input type="hidden" name="destination_id" id="destination_id" value="0">
     <input type="hidden" name="accommodation_id" id="accommodation_id" value="0">
     <input type="hidden" name="from_date" value="<?php echo $from_date; ?>">
