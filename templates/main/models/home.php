@@ -80,6 +80,7 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
         </div>
     </div>
 </section>
+<?php echo "ok"; die; ?>
 <section id="content" class="pt20 pb30">
     <div class="container">
         <div class="row mb10">
