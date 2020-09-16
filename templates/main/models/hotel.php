@@ -536,11 +536,18 @@ require(getFromTemplate('common/header.php', false));
                                                         <div class="col-lg-5 col-md-6 col-sm-7 text-center sep hotel_detail_right">
                                                             <div class="price">
                                                                 <?php
-                                                                if ($base_price > 0 && $base_price > $price_night) { ?>
-                                                                    <br><s class="text-warning"><?php echo formatPrice($base_price * CURRENCY_RATE); ?></s>
+                                                                $defaultMinPriceQ   = $db->query("SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id = '" . $id_room . "'")->fetch(PDO::FETCH_ASSOC);
+                                                                $defaultMinPrice = $defaultMinPriceQ['min_price'];
+                                                                $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_room = '" . $id_room . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
+                                                                $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_room = '" . $id_room . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
+                                                                $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $defaultMinPrice;
+                                                                $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $defaultMinPrice;
+                                                                $newMinDiscPrice = ($newMinDiscPrice < $defaultMinPrice) ? $newMinDiscPrice : $defaultMinPrice;
+                                                                if ($newMinDiscPrice < $newMinPrice) { ?>
+                                                                    <br><s class="text-warning"><?php echo formatPrice($newMinPrice * CURRENCY_RATE); ?></s>
                                                                 <?php
                                                                 } ?>
-                                                                <span itemprop="priceRange"><?php echo formatPrice($price_night * CURRENCY_RATE); ?></span>
+                                                                <span itemprop="priceRange"><?php echo formatPrice($newMinDiscPrice * CURRENCY_RATE); ?></span>
                                                             </div>
                                                             <div class="mb10 text-muted"><?php echo $texts['PER'] . " " . $texts['NIGHT']; ?></div>
                                                             <!--<?php echo $texts['CAPACITY']; ?> : <i class="fas fa-fw fa-male"></i>x<?php echo $max_people; ?>-->
