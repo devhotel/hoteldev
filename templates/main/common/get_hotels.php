@@ -150,7 +150,7 @@ if (isset($db) && $db !== false) {
                                         ' . formatPrice($min_price * CURRENCY_RATE) . '
                                     </span>
                                 </div>
-                                <div class="text-muted">' . $texts['PRICE'] . ' / ' . $texts['NIGHT'] . '</div>
+                                <div class="text-muted">' . $texts['PRICE'] . ' / ' . $texts['NIGHT'] . 'bbb</div>
                             </div>
                             <div class="col-xs-6">
                                 <span class="btn btn-primary mt5 pull-right">' . $texts['MORE_DETAILS'] . '</span>
@@ -173,7 +173,7 @@ if (isset($db) && $db !== false) {
                                         ' . formatPrice($base_price * CURRENCY_RATE) . '
                                     </span>
                                 </div>
-                                <div class="text-muted">' . $texts['PRICE'] . ' / ' . $texts['NIGHT'] . '</div>
+                                <div class="text-muted">' . $texts['PRICE'] . ' / ' . $texts['NIGHT'] . 'aaa</div>
                             </div>
                             <div class="col-xs-6">
                                 <span class="btn btn-primary mt5 pull-right">' . $texts['MORE_DETAILS'] . '</span>
