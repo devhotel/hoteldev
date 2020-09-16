@@ -121,7 +121,6 @@
     <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> -->
-    $javascripts[] = '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js';
     <script src="<?php echo getFromTemplate("js/owl-carousel/owl.carousel.min.js");
                     ?>"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
