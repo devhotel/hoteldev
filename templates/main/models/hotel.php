@@ -346,8 +346,8 @@ require(getFromTemplate('common/header.php', false));
                                         @$hotel_regular_price = $base_hotel_prices[$id_hotel];
                                         $defaultMinPriceQ   = $db->query("SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id_hotel = '" . $id_hotel . "'")->fetch(PDO::FETCH_ASSOC);
                                         $defaultMinPrice = $defaultMinPriceQ['min_price'];
-                                        $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
-                                        $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
+                                        $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE is_blocked = 0 AND id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
+                                        $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE is_blocked = 0 AND id_hotel = '" . $id_hotel . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
                                         $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $defaultMinPrice;
                                         $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $defaultMinPrice;
                                         //$newMinDiscPrice = ($newMinDiscPrice < $hotel_prices[$id_hotel]) ? $newMinDiscPrice : $hotel_prices[$id_hotel];
@@ -383,17 +383,16 @@ require(getFromTemplate('common/header.php', false));
                                                 $num_room = $_SESSION['num_room'];
                                             }
                                             foreach ($result_room as $row) {
-                                                $oldRoomStock = $row['stock'];
-                                                echo $oldRoomStock; die;
-
-                                                if (array_key_exists($row['id'], $room_prices) && $_SESSION['num_room'] <= $row['stock']) {
+                                                $newStockQ  = $db->query("SELECT new_stock, is_blocked FROM pm_room_new_stock_rate WHERE id_room = '" . $row['id'] . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
+                                                $newStock = (!empty($newStockQ['new_stock'])) ? $newStockQ['new_stock'] : $row['stock'];
+                                                if(empty($newStockQ['is_blocked']) || $newStockQ['is_blocked'] == 0){
+                                                if (array_key_exists($row['id'], $room_prices) && $_SESSION['num_room'] <= $newStock) {
                                                     $id_room = $row['id'];
                                                     $room_title = $row['title'];
                                                     $room_alias = $row['alias'];
                                                     $room_subtitle = $row['title'];
                                                     $room_descr = $row['descr'];
                                                     $room_price = $row['price'];
-                                                    $room_stock = $row['stock'];
                                                     $max_adults = $row['max_adults'];
                                                     $max_children = $row['max_children'];
                                                     $max_people = $row['max_people'];
@@ -403,7 +402,8 @@ require(getFromTemplate('common/header.php', false));
                                                     $num_of_bed = $row['number_beds'];
                                                     $room_dimention = $row['room_dimention'];
                                                     $views = $row['views'];
-                                                    $room_stock = isset($res_room[$id_room]['room_stock']) ? $res_room[$id_room]['room_stock'] : $row['stock'];
+                                                    //$room_stock = isset($res_room[$id_room]['room_stock']) ? $res_room[$id_room]['room_stock'] : $row['stock'];
+                                                    $room_stock = $newStock;
                                                     $amount = $room_prices[$id_room]['amount'];
                                                     $full_price = $room_prices[$id_room]['full_price'];
                                                     $type = $room_prices[$id_room]['type'];
@@ -541,8 +541,8 @@ require(getFromTemplate('common/header.php', false));
                                                                 <?php
                                                                 $defaultMinPriceQ   = $db->query("SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id = '" . $id_room . "'")->fetch(PDO::FETCH_ASSOC);
                                                                 $defaultMinPrice = $defaultMinPriceQ['min_price'];
-                                                                $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_room = '" . $id_room . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
-                                                                $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_room = '" . $id_room . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
+                                                                $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE is_blocked = 0 AND id_room = '" . $id_room . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time)."'")->fetch(PDO::FETCH_ASSOC);
+                                                                $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE is_blocked = 0 AND id_room = '" . $id_room . "' AND date = '" . gmdate('Y-m-d H:i:s', $from_time) ."'")->fetch(PDO::FETCH_ASSOC);
                                                                 $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $defaultMinPrice;
                                                                 $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $defaultMinPrice;
                                                                 $newMinDiscPrice = ($newMinDiscPrice < $defaultMinPrice) ? $newMinDiscPrice : $defaultMinPrice;
@@ -595,56 +595,54 @@ require(getFromTemplate('common/header.php', false));
                                                             <a href="javascript:void(0);" id="rm_remove_<?php echo $id_room; ?>" onclick="unselect_room('<?php echo $id_room; ?>');" class="rm_remove btn btn-remove total_button btn-lg btn-block mt5" style="display:none;"> Remove </a>
                                                         </div>
                                                         <!-- <div class="mt10 booking-summary">
-                    <span id="booking-amount_<?php echo $id_room; ?>">
-                        <?php
-                                                    $room_stock = isset($res_hotel[$hotel_id][$id_room]['room_stock']) ? $res_hotel[$hotel_id][$id_room]['room_stock'] : $row['stock'];
-                                                    if ($num_nights <= 0 || (empty($res_hotel[$hotel_id]) && $room_stock > 0) || (!empty($res_hotel[$hotel_id]) && $room_stock <= 0)) {
-                                                        echo '
-                        <input type="hidden" name="adults" value="' . $_SESSION['num_adults'] . '">
-                        <input type="hidden" name="children" value="' . $_SESSION['num_children'] . '">';
-                                                    } ?>
-                </span> -->
-                                                    </div>
-                                </div>
-                                <hr>
-                                    <?php } else {
-                                                    if ($msssg == '') {
-                                                        $msssg = '<div class="mt10 btn btn-danger btn-block" disabled="disabled">' . $texts['NO_AVAILABILITY'] . '</div>';
-                                                        print $msssg;
-                                                    }
-                                                }
+                                    <span id="booking-amount_<?php echo $id_room; ?>">
+                                        <?php
+                                                                    $room_stock = isset($res_hotel[$hotel_id][$id_room]['room_stock']) ? $res_hotel[$hotel_id][$id_room]['room_stock'] : $row['stock'];
+                                                                    if ($num_nights <= 0 || (empty($res_hotel[$hotel_id]) && $room_stock > 0) || (!empty($res_hotel[$hotel_id]) && $room_stock <= 0)) {
+                                                                        echo '
+                                        <input type="hidden" name="adults" value="' . $_SESSION['num_adults'] . '">
+                                        <input type="hidden" name="children" value="' . $_SESSION['num_children'] . '">';
+                                                                    } ?>
+                                </span> -->
+                                                                    </div>
+                                                </div>
+                                                <hr>
+                                                    <?php } else {
+                                                                    if ($msssg == '') {
+                                                                        $msssg = '<div class="mt10 btn btn-danger btn-block" disabled="disabled">' . $texts['NO_AVAILABILITY'] . '</div>';
+                                                                        print $msssg;
+                                                                    }
+                                                                }
+                                                            }
+                                                            }
+                                                        }else{
+                                                            print '<div class="mt10 btn btn-danger btn-block" disabled="disabled">'.$texts['NO_AVAILABILITY'].'</div>';
+                                                        }
+                                                    } else { ?>
+                                    <div class="alert alert-danger">
+                                        <?php echo $texts['ROOM_NOT_AVAILABLE']; ?>.
+                                    </div>
+                                <?php  } ?>
+                                <div class="mt10 booking-summary">
+                                    <span id="booking-amount_<?php echo $hotel_id; ?>">
+                                        <?php
+                                        $room_stock = 0;
+                                        $result_room->execute();
+                                        if ($result_room !== false) {
+                                            foreach ($result_room as $row) {
+                                                $id_room = $row['id'];
+                                                $room_stock = isset($res_hotel[$hotel_id][$id_room]['room_stock']) ? $res_hotel[$hotel_id][$id_room]['room_stock'] : $row['stock'];
                                             }
-                                        }else{
-                                            print '<div class="mt10 btn btn-danger btn-block" disabled="disabled">'.$texts['NO_AVAILABILITY'].'</div>';
                                         }
-                                    } else { ?>
-                    <div class="alert alert-danger">
-                        <?php echo $texts['ROOM_NOT_AVAILABLE']; ?>.
-                    </div>
-                <?php  } ?>
-
-                <?php echo "dddd"; die; ?>
-                <div class="mt10 booking-summary">
-                    <span id="booking-amount_<?php echo $hotel_id; ?>">
-                        <?php
-                        $room_stock = 0;
-                        $result_room->execute();
-                        if ($result_room !== false) {
-                            foreach ($result_room as $row) {
-                                $id_room = $row['id'];
-                                $room_stock = isset($res_hotel[$hotel_id][$id_room]['room_stock']) ? $res_hotel[$hotel_id][$id_room]['room_stock'] : $row['stock'];
-                            }
-                        }
-                        if ($num_nights <= 0 || (empty($res_hotel[$hotel_id]) && $room_stock > 0) || (!empty($res_hotel[$hotel_id]) && $room_stock <= 0)) {
-                            echo '
-    <input type="hidden" name="adults" value="' . $_SESSION['num_adults'] . '">
-    <input type="hidden" name="children" value="' . $_SESSION['num_children'] . '">';
-                        } ?>
-                    </span>
-                </div>
+                                        if ($num_nights <= 0 || (empty($res_hotel[$hotel_id]) && $room_stock > 0) || (!empty($res_hotel[$hotel_id]) && $room_stock <= 0)) {
+                                            echo '<input type="hidden" name="adults" value="' . $_SESSION['num_adults'] . '">
+                                                <input type="hidden" name="children" value="' . $_SESSION['num_children'] . '">';
+                                        } ?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                </div>
+                    </div>
                 </form>
             </div>
             <div class="container">
