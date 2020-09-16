@@ -108,7 +108,7 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                         $price = $row['min_price'];
                         if ($price > 0):
                             $min_price = ($newMinPrice != 0 || $newMinDiscPrice != 0) ? (($newMinDiscPrice <= $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price)) : $price;
-                            echo $min_price; die;
+                            echo $newMinPrice . '  ' . $newMinDiscPrice; die;
                         endif;
                     } ?>
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
