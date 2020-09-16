@@ -644,14 +644,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'confirm') { ?>
                                             } ?>
                                             <a class="btn btn-primary mt10 btn-block" href="<?php echo DOCBASE . $sys_pages['hotels']['alias'] . '/' . text_format($hotel_alias); ?>">
                                                 <i class="fas fa-fw fa-plus-circle"></i>
-                                                <?php //echo $texts['READMORE']; 
-                                                ?>
                                                 <?php echo $texts['BOOK']; ?>
                                             </a>
-                                            <!--<a href="#" data-target="#btn-collapse-<?php echo $id_hotel; ?>" class="btn btn-success btn-block mt10 anchor-toggle">
-                                                <?php //echo $texts['BOOK']; 
-                                                ?>
-                                            </a> -->
                                             <span style="display:none;" id="btn-collapse-<?php echo $id_hotel; ?>" data-toggle="collapse" data-target="#collapse-<?php echo $id_hotel; ?>" class="btn btn-primary btn-block<?php if ((!isset($_REQUEST['hotel_id']) || $_REQUEST['hotel_id'] != $id_hotel) && $num_results != 1) echo ' collapsed'; ?>">
                                                 <i class="fas fa-fw fa-angle-down"></i>Quick book
                                             </span>
