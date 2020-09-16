@@ -4,10 +4,7 @@
  * Script called (Ajax) on scroll or click
  * loads more content with Lazy Loader
  */
-$html = 'ok';
-echo $html; die;
-
-
+$html = '';
 if (!isset($lz_offset)) $lz_offset = 1;
 if (!isset($lz_limit)) $lz_limit = 30;
 if (isset($_POST['ajax']) && $_POST['ajax'] == 1) {
