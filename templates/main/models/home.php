@@ -97,15 +97,15 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                     $hotel_subtitle = $row['subtitle'];
                     $hotel_alias = DOCBASE . $pages[9]['alias'] . '/' . text_format($row['alias']);
                     $min_price = 0;
-                    $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $hotel_id . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
-                    $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $hotel_id . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
                     if ($result_rate->execute() !== false && $db->last_row_count() > 0) {
                         $row = $result_rate->fetch();
                         $price = $row['min_price'];
+                        $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $hotel_id . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
+                        $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $hotel_id . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
                         $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $price;
                         $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $price;
                         if ($price > 0):
-                            $min_price = ($newMinDiscPrice <= $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price);
+                            $min_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price);
                         endif;
                     } ?>
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
