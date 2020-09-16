@@ -364,12 +364,6 @@ require(getFromTemplate('common/header.php', false));
                         </div>
                     </div>
                 </div>
-
-                <?php echo "okaaaaaaaaaaa"; die; ?>
-
-
-
-
                 <div class="roomtype">
                     <form action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="post" class="ajax-form">
                         <input type="hidden" name="from_time" value="<?php echo $from_time; ?>">
@@ -389,9 +383,6 @@ require(getFromTemplate('common/header.php', false));
                                                 $num_room = $_SESSION['num_room'];
                                             }
                                             foreach ($result_room as $row) {
-                                                // echo "<pre>";
-                                                // print_r($row);
-                                                //if (array_key_exists($row['id'], $res_hotel[$hotel_id]) && $_SESSION['num_room'] <= $row['stock']) {
                                                 if (array_key_exists($row['id'], $room_prices) && $_SESSION['num_room'] <= $row['stock']) {
                                                     $id_room = $row['id'];
                                                     $room_title = $row['title'];
@@ -409,8 +400,6 @@ require(getFromTemplate('common/header.php', false));
                                                     $num_of_bed = $row['number_beds'];
                                                     $room_dimention = $row['room_dimention'];
                                                     $views = $row['views'];
-                                                    //var_dump($res_hotel) ;
-                                                    //var_dump($res_room) ;
                                                     $room_stock = isset($res_room[$id_room]['room_stock']) ? $res_room[$id_room]['room_stock'] : $row['stock'];
                                                     $amount = $room_prices[$id_room]['amount'];
                                                     $full_price = $room_prices[$id_room]['full_price'];
@@ -425,12 +414,9 @@ require(getFromTemplate('common/header.php', false));
                                                             <?php
                                                             $result_room_file->execute();
                                                             if ($result_room_file !== false && $db->last_row_count() > 0) {
-                                                                //$row = $result_room_file->fetch(PDO::FETCH_ASSOC);
                                                             ?>
                                                                 <div id="sync_room1" class="sync_room1 owl-carousel">
                                                                     <?php foreach ($result_room_file as $key => $row) {
-                                                                        //var_dump($row);
-                                                                        //echo "<pre>";print_r($row); 
                                                                         $file_id = $row['id'];
                                                                         $filename = $row['file'];
                                                                         $label = $row['label'];
@@ -446,18 +432,10 @@ require(getFromTemplate('common/header.php', false));
                                                                             </div>
                                                                     <?php
                                                                         }
-                                                                        //$sql = 'SELECT * FROM pm_room_file WHERE checked = 1 AND id_item = '.$id_room.' order by id ASC';
-                                                                        //$room_more_image = $db->query($sql)->fetch();
-                                                                        //echo "<pre>";
-                                                                        //print_r($room_more_image);
-                                                                        //if(!empty($room_more_image)){
-                                                                        //    echo "ok";
-                                                                        //}
                                                                     }  ?>
                                                                 </div>
                                                                 <div id="sync_room2" class="sync_room2 owl-carousel">
                                                                     <?php foreach ($result_room_file as $key => $row) {
-                                                                        //var_dump($row);
                                                                         $file_id = $row['id'];
                                                                         $filename = $row['file'];
                                                                         $label = $row['label'];
@@ -634,6 +612,8 @@ require(getFromTemplate('common/header.php', false));
                         <?php echo $texts['ROOM_NOT_AVAILABLE']; ?>.
                     </div>
                 <?php  } ?>
+
+                <?php echo "dddd"; die; ?>
                 <div class="mt10 booking-summary">
                     <span id="booking-amount_<?php echo $hotel_id; ?>">
                         <?php
