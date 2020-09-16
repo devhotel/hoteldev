@@ -62,7 +62,7 @@ $markup .= '</div>';
     var markup = '<?php echo $markup; ?>';
 </script>
 <div id="destination_msg"></div>
-<form id="bookingsearch" name="bookingsearch" action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="get" class="booking-search">
+<form id="bookingsearch" name="bookingsearch" action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="post" class="booking-search">
     <?php
     if (isset($hotel_id)) { ?>
         <input type="hidden" id="src_hotel_id" name="hotel_id" value="0">
