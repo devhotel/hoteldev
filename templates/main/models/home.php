@@ -93,24 +93,25 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                 //$result_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_rate WHERE id_hotel = :hotel_id');
                 $result_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id_hotel = :hotel_id');
                 $result_rate->bindParam(':hotel_id', $hotel_id);
-
-
-                $newMinDiscPriceQ   = $db->query('SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
-                $newMinPriceQ       = $db->query('SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
-                $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : '0';
-                $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_price'])) ? $newMinDiscPriceQ['new_price'] : '0';
-                echo 'SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d');
-                print_r($newMinPrice); 
-                print_r($newMinDiscPrice); 
-                die;
-
-
                 foreach ($result_hotel as $i => $row) {
                     $hotel_id = $row['id'];
                     $hotel_title = $row['title'];
                     $hotel_subtitle = $row['subtitle'];
                     $hotel_alias = DOCBASE . $pages[9]['alias'] . '/' . text_format($row['alias']);
                     $min_price = 0;
+
+
+                    $newMinDiscPriceQ   = $db->query('SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
+                    $newMinPriceQ       = $db->query('SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetch(PDO::FETCH_ASSOC);
+                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : '0';
+                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_price'])) ? $newMinDiscPriceQ['new_price'] : '0';
+                    // echo 'SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d');
+                    // print_r($newMinPrice); 
+                    // print_r($newMinDiscPrice); 
+                    // die;
+
+
+
                     if ($result_rate->execute() !== false && $db->last_row_count() > 0) {
                         $row = $result_rate->fetch();
                         $price = $row['min_price'];
