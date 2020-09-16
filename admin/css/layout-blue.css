@@ -6530,3 +6530,14 @@ table#listing_base tr td a.tipss {
     background: #fff;
     border-radius: 0;
 }
+.form-inline .form-group label, .form-inline .form-group-booking label {
+  width: 100%;
+  display: block;
+}
+.form-inline .form-group input, .form-inline .form-group select, .form-inline .form-group-booking input, .form-inline .form-group-booking select {
+  width: 100% !important;
+  background: #fff;
+  border: 1px solid#c1dcfc;
+  box-shadow: inherit;
+  height: 40px;
+}

@@ -280,12 +280,22 @@ require_once("includes/fn_module.php"); ?>
                                     
                                 <!-----------------Latest Booking-------------------->
                         	<?php
-                        	     $query_latest_booking = "SELECT * FROM  pm_booking AS pb LEFT JOIN pm_booking_room AS br ON br.id_booking = pb.id  WHERE pb.status = 4 AND pb.add_date >= $from_time  AND pb.add_date <= $time_1d_after";
-                        	     if($id_hotel>0 ){ 
-                        	          $query_latest_booking .= " AND pb.id_hotel =$id_hotel  "; 
-                        	     }
-                        	     $query_latest_booking .= " GROUP BY pb.id ORDER BY pb.id DESC ";
-                        	     $result_booking = $db->query($query_latest_booking);
+                        	    //$query_latest_booking = "SELECT * FROM  pm_booking AS pb LEFT JOIN pm_booking_room AS br ON br.id_booking = pb.id  WHERE pb.status = 4 AND pb.add_date >= $from_time  AND pb.add_date <= $time_1d_after";
+                                $tmpFD = explode('/', $from_date);
+                                $tmpTD = explode('/', $to_date);
+                                $newFd = gm_strtotime($tmpFD[2].'-'.$tmpFD[1].'-'.$tmpFD[0]. ' 00:00:00');
+                                $newTd = gm_strtotime($tmpTD[2].'-'.$tmpTD[1].'-'.$tmpTD[0]. ' 23:59:59');
+
+                                $query_latest_booking = "SELECT * FROM  pm_booking AS pb 
+                                LEFT JOIN pm_booking_room AS br ON br.id_booking = pb.id  
+                                WHERE pb.status = 4 AND pb.from_date >= $newFd  AND pb.from_date <= $newTd";
+                                if($id_hotel>0 ){ 
+                        	        $query_latest_booking .= " AND pb.id_hotel =$id_hotel  "; 
+                        	    }
+                                $query_latest_booking .= " GROUP BY pb.id ORDER BY pb.id DESC ";
+                                $result_booking = $db->query($query_latest_booking);
+                                 
+                                
                              	?>
                         			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         				<div class="dshb_booking_ltst">
