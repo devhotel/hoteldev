@@ -93,6 +93,13 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                 //$result_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_rate WHERE id_hotel = :hotel_id');
                 $result_rate = $db->prepare('SELECT MIN(price) as min_price FROM pm_room WHERE checked = 1 AND id_hotel = :hotel_id');
                 $result_rate->bindParam(':hotel_id', $hotel_id);
+
+
+                $list = $db->query('SELECT new_price, new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = ' . $hotel_id . ' AND date = ' . date('Y-m-d'))->fetchAll(PDO::FETCH_ASSOC);
+
+                print_r($list); die;
+
+
                 foreach ($result_hotel as $i => $row) {
                     $hotel_id = $row['id'];
                     $hotel_title = $row['title'];
