@@ -69,9 +69,7 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
         </ol>
         <div class="carousel-inner" role="listbox">
             <?php for ($j = 0; $j < count($testimonial); $j++) { ?>
-                <div class="item <?php if ($j == 0) {
-                                        echo 'active';
-                                    } ?>">
+                <div class="item <?=($j == 0) ? 'active' : ''?>">
                     <h1>HMS , Luxury Hotels </h1>
                     <?= $testimonial[$j]['name'] ?>
                     <span>- <?= $testimonial[$j]['comment'] ?> -</span>
@@ -108,7 +106,6 @@ $testimonial = $db->query('SELECT * FROM pm_testimonial where status = 1 ORDER B
                         $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $price;
                         if ($price > 0):
                             $min_price = ($newMinDiscPrice <= $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price);
-                            //echo $newMinPrice . '  ' . $newMinDiscPrice; die;
                         endif;
                     } ?>
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
