@@ -297,8 +297,6 @@ if ($result_budget_hotel !== false) {
         $hotel_min_price = 0;
         $hotel_max_price = 0;
         $result_budget_room->execute();
-
-
         if ($result_budget_room !== false) {
             foreach ($result_budget_room as $row) {
                 $id_room = $row['id'];
@@ -310,23 +308,6 @@ if ($result_budget_hotel !== false) {
                 $result_room_rate->execute();
                 if ($result_room_rate !== false && $db->last_row_count() > 0) {
                     $row = $result_room_rate->fetch();
-
-
-                    echo $_SESSION['from_date'] . ' '. $_SESSION['to_date'];
-
-                    die;
-
-
-                    $newMinDiscPriceQ   = $db->query("SELECT MIN(new_disc_price) as new_disc_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
-                    $newMinPriceQ       = $db->query("SELECT MIN(new_price) as new_price FROM pm_room_new_stock_rate WHERE id_hotel = '" . $id_hotel . "' AND date = '" . date('Y-m-d')."'")->fetch(PDO::FETCH_ASSOC);
-                    $newMinPrice        = (!empty($newMinPriceQ['new_price'])) ? $newMinPriceQ['new_price'] : $price;
-                    $newMinDiscPrice    = (!empty($newMinDiscPriceQ['new_disc_price'])) ? $newMinDiscPriceQ['new_disc_price'] : $price;
-                    if ($price > 0):
-                        $min_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $price) ? $newMinDiscPrice : $price) : (($newMinPrice < $price) ? $newMinPrice : $price);
-                    endif;
-
-
-
                     if ($row['min_price'] > 0) $room_price = $row['min_price'];;
                 }
                 if (
@@ -367,7 +348,7 @@ if ($result_budget_hotel !== false) {
 
 
 
-
+        
         if ((!empty($price_min) && $hotel_max_price < $price_min) || (!empty($price_max) && $hotel_min_price > $price_max)) $hidden_hotels[] = $id_hotel;
         $hotel_prices[$id_hotel] = $hotel_min_price;
     }
