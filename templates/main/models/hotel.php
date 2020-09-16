@@ -295,9 +295,9 @@ require(getFromTemplate('common/header.php', false));
                     </div>
                     <?php
                     // echo "ok"; die;
-                    echo "<pre>";
-                    print_r($hotel);
-                    die;
+                    // echo "<pre>";
+                    // print_r($hotel);
+                    // die;
                     ?>
                     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-6">
                         <div class="hotel_details_right">
@@ -340,40 +340,6 @@ require(getFromTemplate('common/header.php', false));
                                     echo '</ul>';
                                 } ?>
                                 <div class="typebox3">
-                                    <?php /*
-$min_price = 0;
-$result_regular_price = $db->query('SELECT MIN(`price`) as base_price FROM pm_room WHERE `id_hotel`='.$hotel_id);
-$base_price = $result_regular_price->fetch();
-$base_price = $base_price['base_price'];
-$now_time = strtotime("now");
-$price_arry = array();
-$result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
-    FROM pm_rate as ra, pm_room as ro
-    WHERE ra.end_date >='.$now_time.' AND  ro.id = id_room AND ro.id_hotel = '.$hotel_id);
-    if($result_rate !== false && $db->last_row_count() > 0){}?>
-                                
-                                <?php
-                                if($min_price > 0){
-                                    ?>
-                                    <?php echo formatPrice($min_price*CURRENCY_RATE); ?>
-                                    <?php
-                                    if($result_base_rate->execute() !== false && $db->last_row_count() > 0){
-                                        $brow = $result_base_rate->fetch();
-                                        $base_price = $brow['min_price'];
-                                        if($base_price > 0 && $base_price > $min_price){ 
-                                            echo '<span itemprop="priceRange"><del>'.formatPrice($base_price*CURRENCY_RATE).'</del></span><br/>'; 
-                                        }
-                                    }
-                                    ?>
-                                    <?php 
-                                    
-                                }else{
-                                    ?>
-                                    <?php echo formatPrice($base_price*CURRENCY_RATE); ?>
-                                    
-                                    <?php 
-                                    
-                                } */ ?>
                                     <?php
                                     if (isset($hotel_prices[$id_hotel]) && $hotel_prices[$id_hotel] > 0) { ?>
                                         <?php
@@ -386,12 +352,16 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                     <?php } ?><span>
                                         <p>Tax excl. price</p>
                                 </div>
-                                <!--<div class="bkd">"BOOKTODAY" Coupon Code Pre-applied</div>-->
-                                <!--<div class="bookbutton"><a href="#">Book Now</a></div>-->
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <?php echo "okaaaaaaaaaaa"; die; ?>
+
+
+
+
                 <div class="roomtype">
                     <form action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="post" class="ajax-form">
                         <input type="hidden" name="from_time" value="<?php echo $from_time; ?>">
