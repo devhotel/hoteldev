@@ -318,6 +318,9 @@ if ($result_budget_hotel !== false) {
                     if ($prc > 0):
                         $min_price = ($newMinDiscPrice < $newMinPrice) ? (($newMinDiscPrice < $prc) ? $newMinDiscPrice : $prc) : (($newMinPrice < $prc) ? $newMinPrice : $prc);
                     endif;
+
+
+                    echo $min_price; die;
                     //if ($row['min_price'] > 0) $room_price = $row['min_price'];
                 }
                 if (
