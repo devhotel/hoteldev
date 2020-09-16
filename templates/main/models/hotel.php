@@ -18,7 +18,6 @@ if ($result !== false && $db->last_row_count() == 1) {
         if (is_file(SYSBASE . 'medias/hotel/medium/' . $file_id . '/' . $filename))
             $page_img = getUrl(true) . DOCBASE . 'medias/hotel/medium/' . $file_id . '/' . $filename;
     }
-
     $field_notice = array();
     $msg_error = '';
     $msg_success = '';
@@ -82,7 +81,6 @@ if ($result !== false && $db->last_row_count() == 1) {
     } else
         $num_nights = 0;
     if (count($field_notice) == 0) {
-
         if ($num_nights <= 0) $msg_error .= $texts['NO_AVAILABILITY'];
         else {
             require_once(getFromTemplate('common/functions.php', false));
@@ -145,7 +143,6 @@ if ($result !== false && $db->last_row_count() == 1) {
                             //
                             $price_night = $res_hotel[$id_hotel][$id_room]['price_per_night'];
                         }
-
                         if ((!empty($price_min) && $price_night < $price_min) || (!empty($price_max) && $price_night > $price_max)) $hidden_rooms[] = $id_room;
                         else {
                             //$room_prices[$id_room]['price_night'] = $price_night;
@@ -155,7 +152,6 @@ if ($result !== false && $db->last_row_count() == 1) {
                             $room_prices[$id_room]['full_price'] = $full_price;
                             $room_prices[$id_room]['type'] = $type;
                         }
-
                         if (empty($hotel_min_price) || $price_night < $hotel_min_price) {
                             $hotel_min_price = $amount;
                             $base_hotel_prices[$id_hotel] = $room_price;
@@ -180,16 +176,12 @@ if ($result !== false && $db->last_row_count() == 1) {
     }
     $result_rating = $db->prepare('SELECT AVG(rating) as avg_rating FROM pm_comment WHERE item_type = \'hotel\' AND id_item = :id_hotel AND checked = 1 AND rating > 0 AND rating <= 5');
     $result_rating->bindParam(':id_hotel', $hotel_id);
-
     $id_facility = 0;
     $result_facility_file = $db->prepare('SELECT * FROM pm_facility_file WHERE id_item = :id_facility AND checked = 1 AND lang = ' . DEFAULT_LANG . ' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
     $result_facility_file->bindParam(':id_facility', $id_facility);
-
     $room_facilities = '0';
     $result_room_facilities = $db->prepare('SELECT * FROM pm_facility WHERE lang = ' . LANG_ID . ' AND FIND_IN_SET(id, :room_facilities) ORDER BY rank LIMIT 18');
     $result_room_facilities->bindParam(':room_facilities', $room_facilities);
-
-
     $query_room = 'SELECT * FROM pm_room WHERE id_hotel = :id_hotel AND checked = 1 AND lang = ' . LANG_ID;
     if (!empty($hidden_rooms)) $query_room .= ' AND id NOT IN(' . implode(',', $hidden_rooms) . ')';
     $query_room .= ' ORDER BY';
@@ -197,23 +189,18 @@ if ($result !== false && $db->last_row_count() == 1) {
     $query_room .= ' price';
     $result_room = $db->prepare($query_room);
     $result_room->bindParam(':id_hotel', $hotel_id);
-
     $result_room_file = $db->prepare('SELECT * FROM pm_room_file WHERE id_item = :id_room AND checked = 1 AND lang = ' . LANG_ID . ' AND type = \'image\' AND file != \'\' ORDER BY rank');
     $result_room_file->bindParam(':id_room', $id_room);
-
-
     $query_hotel = 'SELECT * FROM pm_hotel WHERE WHERE id=' . $hotel_id . ' AND checked = 1 AND lang = ' . LANG_ID;
     if (!empty($hidden_hotels)) $query_hotel .= ' AND id NOT IN(' . implode(',', $hidden_hotels) . ')';
     $query_hotel .= ' ORDER BY';
     if ($hotel_id != 0) $query_hotel .= ' CASE WHEN id = ' . $hotel_id . ' THEN 1 ELSE 4 END,';
     if (!empty($hotel_ids)) $query_hotel .= ' CASE WHEN id IN(' . implode(',', $hotel_ids) . ') THEN 3 ELSE 4 END,';
     $query_hotel .= ' rank';
-
     $num_results = 0;
     $result_hotel = $db->query($query_hotel);
     if ($result_hotel !== false) {
         $num_results = $db->last_row_count();
-
         $visible_hotels = $result_hotel->fetchAll(PDO::FETCH_COLUMN, 0);
         if (!empty($visible_hotels)) {
             $visible_hotels = array_intersect_key($hotel_prices, array_flip($visible_hotels));
@@ -222,56 +209,34 @@ if ($result !== false && $db->last_row_count() == 1) {
             else $page['subtitle'] = $subtitle;
         }
     }
-
     $query_hotel .= ' LIMIT ' . $search_limit . ' OFFSET ' . $search_offset;
-
     $result_hotel = $db->query($query_hotel);
-
-
-    echo "ok"; die;
-
-
 } else err404();
-
 //echo check_URI(DOCBASE.$page_alias);
-
 /* ==============================================
     * CSS AND JAVASCRIPT USED IN THIS MODEL
     * ==============================================
     */
 $javascripts[] = DOCBASE . 'js/plugins/sharrre/jquery.sharrre.min.js';
-
 $javascripts[] = DOCBASE . 'js/plugins/jquery.event.calendar/js/jquery.event.calendar.js';
 $javascripts[] = DOCBASE . 'js/plugins/jquery.event.calendar/js/languages/jquery.event.calendar.' . LANG_TAG . '.js';
 $stylesheets[] = array('file' => DOCBASE . 'js/plugins/jquery.event.calendar/css/jquery.event.calendar.css', 'media' => 'all');
-
 $stylesheets[] = array('file' => '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css', 'media' => 'all');
 $stylesheets[] = array('file' => '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.theme.default.min.css', 'media' => 'all');
 $javascripts[] = '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js';
-
 $stylesheets[] = array('file' => 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/css/star-rating.min.css', 'media' => 'all');
 $javascripts[] = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/star-rating.min.js';
-
 $stylesheets[] = array('file' => DOCBASE . 'js/plugins/isotope/css/style.css', 'media' => 'all');
 $javascripts[] = '//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js';
 $javascripts[] = DOCBASE . 'js/plugins/isotope/jquery.isotope.sloppy-masonry.min.js';
-
 $stylesheets[] = array('file' => DOCBASE . 'js/plugins/lazyloader/lazyloader.css', 'media' => 'all');
 $javascripts[] = DOCBASE . 'js/plugins/lazyloader/lazyloader.js';
-
 $javascripts[] = DOCBASE . 'js/plugins/live-search/jquery.liveSearch.js';
-
 //require(getFromTemplate('common/send_comment.php', false));
-
 require(getFromTemplate('common/header.php', false));
-
 ?>
-
 <section id="page">
-
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
-
-
     <div id="content" class="pb30">
         <div id="search-page" class="mb20">
             <div class="container">
@@ -279,7 +244,6 @@ require(getFromTemplate('common/header.php', false));
             </div>
             <div class="clearfix"></div>
         </div>
-
         <div class="container">
             <div class="alert alert-success" style="display:none;"></div>
             <div class="alert alert-danger" style="display:none;"></div>
@@ -297,7 +261,6 @@ require(getFromTemplate('common/header.php', false));
                                         $file_id = $row['id'];
                                         $filename = $row['file'];
                                         $label = $row['label'];
-
                                         $realpath = SYSBASE . 'medias/hotel/big/' . $file_id . '/' . $filename;
                                         $thumbpath = DOCBASE . 'medias/hotel/big/' . $file_id . '/' . $filename;
                                         if (is_file($realpath)) { ?>
@@ -314,13 +277,11 @@ require(getFromTemplate('common/header.php', false));
                                 $result_hotel_file = $db->query('SELECT * FROM pm_hotel_file WHERE id_item = ' . $hotel_id . ' AND checked = 1 AND lang = ' . DEFAULT_LANG . ' AND type = \'image\' AND file != \'\' ORDER BY rank');
                                 if ($result_hotel_file !== false) {
                                     foreach ($result_hotel_file as $i => $row) {
-
                                         $file_id = $row['id'];
                                         $filename = $row['file'];
                                         $label = $row['label'];
                                         $realpath = SYSBASE . 'medias/hotel/big/' . $file_id . '/' . $filename;
                                         $thumbpath = DOCBASE . 'medias/hotel/big/' . $file_id . '/' . $filename;
-
                                         if (is_file($realpath)) { ?>
                                             <div class="item">
                                                 <img src="<?php echo $thumbpath; ?>" alt="<?php echo $label; ?>" />
@@ -329,14 +290,14 @@ require(getFromTemplate('common/header.php', false));
                                         }
                                     }
                                 } ?>
-
                             </div>
                         </div>
                     </div>
                     <?php
-                    // echo "<pre>";
-                    // print_r($hotel);
-                    // die;
+                    // echo "ok"; die;
+                    echo "<pre>";
+                    print_r($hotel);
+                    die;
                     ?>
                     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-6">
                         <div class="hotel_details_right">
@@ -352,7 +313,6 @@ require(getFromTemplate('common/header.php', false));
                                 <?php if ($accom != "") { ?>
                                     <div class="typebox1"><span><?php echo $accom; ?></span></div>
                                 <?php } ?>
-
                                 <?php
                                 $result_facility = $db->query('SELECT * FROM pm_facility WHERE lang = ' . LANG_ID . ' AND id IN(' . $hotel['facilities'] . ') ORDER BY id', PDO::FETCH_ASSOC);
                                 if ($result_facility !== false && $db->last_row_count() > 0) {
@@ -361,7 +321,6 @@ require(getFromTemplate('common/header.php', false));
                                     foreach ($result_facility as $i => $row) {
                                         $facility_id     = $row['id'];
                                         $facility_name  = $row['name'];
-
                                         $result_facility_file = $db->query('SELECT * FROM pm_facility_file WHERE id_item = ' . $facility_id . ' AND checked = 1 AND lang = ' . DEFAULT_LANG . ' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1', PDO::FETCH_ASSOC);
                                         if ($result_facility_file !== false && $db->last_row_count() == 1) {
                                             $row = $result_facility_file->fetch();
@@ -430,11 +389,9 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                 <!--<div class="bkd">"BOOKTODAY" Coupon Code Pre-applied</div>-->
                                 <!--<div class="bookbutton"><a href="#">Book Now</a></div>-->
                             </div>
-
                         </div>
                     </div>
                 </div>
-
                 <div class="roomtype">
                     <form action="<?php echo DOCBASE . $sys_pages['booking']['alias']; ?>" method="post" class="ajax-form">
                         <input type="hidden" name="from_time" value="<?php echo $from_time; ?>">
@@ -477,7 +434,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                     //var_dump($res_hotel) ;
                                                     //var_dump($res_room) ;
                                                     $room_stock = isset($res_room[$id_room]['room_stock']) ? $res_room[$id_room]['room_stock'] : $row['stock'];
-
                                                     $amount = $room_prices[$id_room]['amount'];
                                                     $full_price = $room_prices[$id_room]['full_price'];
                                                     $type = $room_prices[$id_room]['type'];
@@ -500,11 +456,9 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                                         $file_id = $row['id'];
                                                                         $filename = $row['file'];
                                                                         $label = $row['label'];
-
                                                                         $realpath = SYSBASE . 'medias/room/small/' . $file_id . '/' . $filename;
                                                                         $thumbpath = DOCBASE . 'medias/room/small/' . $file_id . '/' . $filename;
                                                                         $zoompath = DOCBASE . 'medias/room/big/' . $file_id . '/' . $filename;
-
                                                                         if (is_file($realpath)) {
                                                                             $s = getimagesize($realpath); ?>
                                                                             <div class="item">
@@ -529,11 +483,9 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                                         $file_id = $row['id'];
                                                                         $filename = $row['file'];
                                                                         $label = $row['label'];
-
                                                                         $realpath = SYSBASE . 'medias/room/small/' . $file_id . '/' . $filename;
                                                                         $thumbpath = DOCBASE . 'medias/room/small/' . $file_id . '/' . $filename;
                                                                         $zoompath = DOCBASE . 'medias/room/big/' . $file_id . '/' . $filename;
-
                                                                         if (is_file($realpath)) {
                                                                             $s = getimagesize($realpath); ?>
                                                                             <div class="item">
@@ -575,7 +527,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                                 $result_room_facilities->execute();
                                                                 if ($result_room_facilities !== false && $db->last_row_count() > 0) {
                                                                     $i = 0;
-
                                                                     foreach ($result_room_facilities as $row) {
                                                                         $i++;
                                                                         $id_itel = $row['id'];
@@ -637,7 +588,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                             </div>
                                                             <div class="mb10 text-muted"><?php echo $texts['PER'] . " " . $texts['NIGHT']; ?></div>
                                                             <!--<?php echo $texts['CAPACITY']; ?> : <i class="fas fa-fw fa-male"></i>x<?php echo $max_people; ?>-->
-
                                                             <?php if ($room_stock > 0) { ?>
                                                                 <div style="display:none;" id="div_rms_<?php echo $id_room; ?>" class="div_rms">
                                                                     <div class="pt10 form-inline">
@@ -664,7 +614,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                                                 </select>
                                                                             </div>
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
                                                             <?php
@@ -672,7 +621,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                                 <div class="mt10 btn btn-danger btn-block" disabled="disabled"><?php echo $texts['NO_AVAILABILITY']; ?></div>
                                                             <?php
                                                             } ?>
-
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         <div id="room-options-<?php echo $id_room; ?>" class="room-options"></div>
@@ -680,8 +628,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                                             <a href="javascript:void(0);" id="rm_select_<?php echo $id_room; ?>" onclick="select_room('<?php echo $id_room; ?>','<?php echo ($_SESSION['num_room'] ? $_SESSION['num_room'] : 0); ?>');" class="rm_select btn btn-select total_button btn-lg btn-block mt5"> Select </a>
                                                             <a href="javascript:void(0);" id="rm_remove_<?php echo $id_room; ?>" onclick="unselect_room('<?php echo $id_room; ?>');" class="rm_remove btn btn-remove total_button btn-lg btn-block mt5" style="display:none;"> Remove </a>
                                                         </div>
-
-
                                                         <!-- <div class="mt10 booking-summary">
                     <span id="booking-amount_<?php echo $id_room; ?>">
                         <?php
@@ -692,11 +638,8 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                         <input type="hidden" name="children" value="' . $_SESSION['num_children'] . '">';
                                                     } ?>
                 </span> -->
-
                                                     </div>
-
                                 </div>
-
                                 <hr>
                                     <?php } else {
                                                     if ($msssg == '') {
@@ -712,7 +655,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                     <div class="alert alert-danger">
                         <?php echo $texts['ROOM_NOT_AVAILABLE']; ?>.
                     </div>
-
                 <?php  } ?>
                 <div class="mt10 booking-summary">
                     <span id="booking-amount_<?php echo $hotel_id; ?>">
@@ -725,7 +667,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                                 $room_stock = isset($res_hotel[$hotel_id][$id_room]['room_stock']) ? $res_hotel[$hotel_id][$id_room]['room_stock'] : $row['stock'];
                             }
                         }
-
                         if ($num_nights <= 0 || (empty($res_hotel[$hotel_id]) && $room_stock > 0) || (!empty($res_hotel[$hotel_id]) && $room_stock <= 0)) {
                             echo '
     <input type="hidden" name="adults" value="' . $_SESSION['num_adults'] . '">
@@ -733,14 +674,11 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                         } ?>
                     </span>
                 </div>
-
                             </div>
                         </div>
-
                 </div>
                 </form>
             </div>
-
             <div class="container">
                 <div class="hotel_about">
                     <div class="col-sm-12 col-md-6 col-lg-6">
@@ -754,11 +692,9 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                         </script>
                         <div id="mapWrapper" class="mb10" data-marker="<?php echo getFromTemplate('images/marker.png'); ?>" data-api_key="<?php echo GMAPS_API_KEY; ?>"></div>
                     </div>
-
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <?php echo $hotel['descr']; ?>
                     </div>
-
                     <div class="hotel_review_panel">
                         <h2>Hotel Policies</h2>
                         <?php if ($hotel['book_policy'] != "") { ?>
@@ -774,7 +710,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                             <?php echo $hotel['cancel_policy']; ?>
                         <?php } ?>
                     </div>
-
                     <div class="hotel_review_panel">
                         <div class="row">
                             <div class="col-sm-12 col-md-5 col-lg-5">
@@ -833,18 +768,14 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
             </div>
     </div>
 </section>
-
 </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/star-rating.min.js" type="text/javascript"></script>
-
 <script>
     function initMap() {
         var markerArray = [];
-
         // Instantiate a directions service.
         var directionsService = new google.maps.DirectionsService;
-
         // Create a map and center it on Manhattan.
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13,
@@ -853,15 +784,12 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                 lng: -73.974
             }
         });
-
         // Create a renderer for directions and bind it to the map.
         var directionsDisplay = new google.maps.DirectionsRenderer({
             map: map
         });
-
         // Instantiate an info window to hold step text.
         var stepDisplay = new google.maps.InfoWindow;
-
         // Display the route between the initial start and end selections.
         calculateAndDisplayRoute(
             directionsDisplay, directionsService, markerArray, stepDisplay, map);
@@ -873,13 +801,11 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
         document.getElementById('start').addEventListener('keyup', onChangeHandler);
         document.getElementById('end').addEventListener('change', onChangeHandler);
     }
-
     function calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map) {
         // First, remove any existing markers from the map.
         for (var i = 0; i < markerArray.length; i++) {
             markerArray[i].setMap(null);
         }
-
         // Retrieve the start and end locations and create a DirectionsRequest using
         // WALKING directions.
         directionsService.route({
@@ -899,7 +825,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
             }
         });
     }
-
     function showSteps(directionResult, markerArray, stepDisplay, map) {
         // For each step, place a marker, and add the text to the marker's infowindow.
         // Also attach the marker to an array so we can keep track of it and remove it
@@ -913,7 +838,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                 stepDisplay, marker, myRoute.steps[i].instructions, map);
         }
     }
-
     function attachInstructionText(stepDisplay, marker, text, map) {
         google.maps.event.addListener(marker, 'click', function() {
             // Open an info window when the marker is clicked on, containing the text
@@ -922,7 +846,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
             stepDisplay.open(map, marker);
         });
     }
-
     function place_initialize() {
         var input = document.getElementById('start');
         var autocomplete = new google.maps.places.Autocomplete(input);
@@ -946,10 +869,8 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                 return val;
             },
         });
-
         var sync1 = $("#sync1");
         var sync2 = $("#sync2");
-
         sync1.owlCarousel({
             singleItem: true,
             autoPlay: false,
@@ -959,7 +880,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
             afterAction: syncPosition,
             responsiveRefreshRate: 200,
         });
-
         sync2.owlCarousel({
             items: 5,
             itemsDesktop: [1199, 5],
@@ -973,8 +893,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                 el.find(".owl-item").eq(0).addClass("synced");
             }
         });
-
-
         var syncRoom1 = $(".sync_room1");
         var syncRoom2 = $(".sync_room2");
         syncRoom1.owlCarousel({
@@ -986,7 +904,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
             afterAction: syncPosition,
             responsiveRefreshRate: 200,
         });
-
         syncRoom2.owlCarousel({
             items: 5,
             itemsDesktop: [1199, 5],
@@ -1000,7 +917,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                 el.find(".owl-item").eq(0).addClass("synced");
             }
         });
-
         function syncPosition(el) {
             var current = this.currentItem;
             $("#sync2")
@@ -1012,13 +928,11 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                 center(current)
             }
         }
-
         $("#sync2").on("click", ".owl-item", function(e) {
             e.preventDefault();
             var number = $(this).data("owlItem");
             sync1.trigger("owl.goTo", number);
         });
-
         function center(number) {
             var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
             var num = number;
@@ -1028,7 +942,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
                     var found = true;
                 }
             }
-
             if (found === false) {
                 if (num > sync2visible[sync2visible.length - 1]) {
                     sync2.trigger("owl.goTo", num - sync2visible.length + 2)
@@ -1043,7 +956,6 @@ $result_rate = $db->query('SELECT ra.price, ra.discount, ra.discount_type
             } else if (num === sync2visible[0]) {
                 sync2.trigger("owl.goTo", num - 1)
             }
-
         }
     });
 </script>
