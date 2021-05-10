@@ -36,7 +36,7 @@ if(isset($db) && $db !== false){
                         <div class="col-md-3 col-lg-2 pt5 pb5">
                             <div class="input-group input-group-sm">
                                 <div class="input-group-addon"><i class="fas fa-fw fa-male"></i> '.$texts['ADULT'].'</div>
-                                <select name="num_adults['.$room_id.']['.$i.']" class="form-control adult_select sendAjaxForm selectpicker" data-extratarget="#booking-amount_'.$hotel_id.'" data-action="https://devhotel.fitser.com/api/v3/change_num_people.php?index='.$i.'&id_room='.$room_id.'&id_hotel='.$hotel_id.'" data-target="#room-result-'.$room_id.'-'.$i.'">';
+                                <select name="num_adults['.$room_id.']['.$i.']" class="form-control adult_select sendAjaxForm selectpicker" data-extratarget="#booking-amount_'.$hotel_id.'" data-action="'.getFromTemplate('common/change_num_people.php').'?index='.$i.'&id_room='.$room_id.'&id_hotel='.$hotel_id.'" data-target="#room-result-'.$room_id.'-'.$i.'">';
                                     for($j = 1; $j <= $max_adults; $j++){
                                        $selected= ($_SESSION['ab']['adlts'][$i]==$j?' selected="selected"':'');
                                        $response['html'] .= '<option value="'.$j.'" '.$selected.'>'.$j.'</option>';
@@ -48,7 +48,7 @@ if(isset($db) && $db !== false){
                         <div class="col-md-3 col-lg-2 pt5 pb5">
                             <div class="input-group input-group-sm">
                                 <div class="input-group-addon"><i class="fas fa-fw fa-male"></i> '.$texts['CHILDREN'].'</div>
-                                <select name="num_children['.$room_id.']['.$i.']" class="form-control kids_select sendAjaxForm selectpicker" data-extratarget="#booking-amount_'.$hotel_id.'" data-action="https://devhotel.fitser.com/api/v3/change_num_people.php?index='.$i.'&id_room='.$room_id.'&id_hotel='.$hotel_id.'" data-target="#room-result-'.$room_id.'-'.$i.'">
+                                <select name="num_children['.$room_id.']['.$i.']" class="form-control kids_select sendAjaxForm selectpicker" data-extratarget="#booking-amount_'.$hotel_id.'" data-action="'.getFromTemplate('common/change_num_people.php').'?index='.$i.'&id_room='.$room_id.'&id_hotel='.$hotel_id.'" data-target="#room-result-'.$room_id.'-'.$i.'">
                                     <option value="0">0</option>';
                                     for($j = 1; $j <= $max_children; $j++){
                                         $selected= ($_SESSION['ab']['kids'][$i]==$j?' selected="selected"':'');
