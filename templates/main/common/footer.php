@@ -436,7 +436,6 @@ $(window).scroll(function() {
   });
   var odid = 0;
   var select_room = function(id, rooms) {
-    alert("ok");
     var maxRoom = findMaxValue($('select#rms_' + id));
     $('select.room_select').val(0);
     $('.incrmnt input').val(0);
