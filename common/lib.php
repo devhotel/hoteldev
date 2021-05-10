@@ -1430,6 +1430,7 @@ function formatPrice($price, $currency = CURRENCY_SIGN)
  */
 function getFromTemplate($path, $docbase = true)
 {
+    echo $path; die;
     $base = $docbase ? DOCBASE : SYSBASE;
     $default_path = 'templates/default/' . $path;
     if (TEMPLATE == 'default')
