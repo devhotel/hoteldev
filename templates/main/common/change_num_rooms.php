@@ -1,8 +1,9 @@
 <?php
+echo "oksssss"; die;
 require_once('../../../common/lib.php');
 require_once('../../../common/define.php');
 require_once('functions.php');
-echo "ok"; die;
+
 $response = array('html' => '', 'notices' => array(), 'error' => '', 'success' => '', 'extraHtml' => '');
 
 $response['extraHtml'] = getBookingSummary();
