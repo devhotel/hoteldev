@@ -565,7 +565,7 @@ require(getFromTemplate('common/header.php', false));
                                                                                 <span class="minus" data-m="<?php echo $id_room; ?>" id="minus_<?php echo $id_room; ?>">-</span>
                                                                             </div>
                                                                             <div style="display:none;">
-                                                                                <select id="rms_<?php echo $id_room; ?>" name="num_rooms[<?php echo $id_room; ?>]" class="form-control room_select selectpicker btn-group-sm sendAjaxForm" data-target="#room-options-<?php echo $id_room; ?>" data-extratarget="#booking-amount_<?php echo $hotel_id; ?>" data-action="<?php echo getFromTemplate('common/change_num_roomsss.php'); ?>?room=<?php echo $id_room; ?>">
+                                                                                <select id="rms_<?php echo $id_room; ?>" name="num_rooms[<?php echo $id_room; ?>]" class="form-control room_select selectpicker btn-group-sm sendAjaxForm" data-target="#room-options-<?php echo $id_room; ?>" data-extratarget="#booking-amount_<?php echo $hotel_id; ?>" data-action="<?php echo getFromTemplate('common/change_num_rooms.php'); ?>?room=<?php echo $id_room; ?>">
                                                                                     <?php
                                                                                     for ($i = 0; $i <= $room_stock; $i++) { ?>
                                                                                         <?php $selected = '';
