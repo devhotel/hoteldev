@@ -6,9 +6,6 @@ require('common/lib.php');
 require('common/define.php');
 
 if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['type'] == 'administrator' || $_SESSION['user']['type'] == 'manager'))){
-
-    echo "a"; die;
-
     $uri = preg_split('#[\\\\/]#', REQUEST_URI);
     $err404 = false;
     $ishome = false;
@@ -18,13 +15,13 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
     $article_id = 0;
     $page_alias = '';
     $article_alias = '';
-
     $count_uri = count($uri);
-
     if((LANG_ENABLED && $count_uri == 1) || (!LANG_ENABLED && $uri[0] == '')) $ishome = true;
     else{
         $i = (LANG_ENABLED) ? 1 : 0;
         $page_alias = trim(LANG_ALIAS.$uri[$i], '/\\');
+
+        echo $page_alias; die;
         if($count_uri > $i+2) err404();
         if(isset($uri[$i+1])) $article_alias = $uri[$i+1];
     }
@@ -79,7 +76,6 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
 
     require(SYSBASE.'templates/'.TEMPLATE.'/common/footer.php');
 }else{
-    echo "aa"; die;
     header('HTTP/1.1 503 Service Temporarily Unavailable');
     if(DOCBASE.REQUEST_URI != DOCBASE) header('Location: '.DOCBASE);
     require(SYSBASE.'templates/'.TEMPLATE.'/maintenance.php');
