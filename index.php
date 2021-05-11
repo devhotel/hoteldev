@@ -30,6 +30,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
             $article = $row;
         }
     }
+    echo SYSBASE; die; die;
     $found = false;
     if(!empty($pages)){
         foreach($pages as $row){
@@ -44,6 +45,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
             }
         }
     }
+    
     if($found === false) err404();
 
     $title_tag = $page['title_tag'];
@@ -66,6 +68,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
     $breadcrumbs = array_reverse($breadcrumbs);
 
     $page_model = SYSBASE.'templates/'.TEMPLATE.'/models/'.str_replace('_','/',$page_model).'.php';
+    
     if(is_file($page_model)) include($page_model);
 
     require(SYSBASE.'templates/'.TEMPLATE.'/common/footer.php');
