@@ -25,7 +25,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
         if($count_uri > $i+2) err404();
         if(isset($uri[$i+1])) $article_alias = $uri[$i+1];
     }
-    print_r($articles); die;
+    print_r($pages); die;
     foreach($articles as $id => $row){
         //current article
         if($article_alias != '' && $article_alias == substr($row['alias'], strrpos($row['alias'], '/')+1)){
@@ -33,7 +33,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
             $article = $row;
         }
     }
-
+print_r($pages); die;
     $found = false;
     if(!empty($pages)){
         foreach($pages as $row){
