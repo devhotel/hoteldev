@@ -45,7 +45,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
         }
     }
     
-    echo $_SERVER['REQUEST_URI']; die;
+    print_r($_SERVER); die;
 
 
     if($found === false) err404();
