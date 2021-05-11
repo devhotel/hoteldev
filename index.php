@@ -2,6 +2,7 @@
 /**
  * Display the right model of the template according to the url
  */
+echo "sljkhdjas"; die;
 require('common/lib.php');
 require('common/define.php');
 
