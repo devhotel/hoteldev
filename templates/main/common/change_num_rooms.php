@@ -1,9 +1,7 @@
 <?php
-echo "oksssssgit pull"; die;
 require_once('../../../common/lib.php');
 require_once('../../../common/define.php');
 require_once('functions.php');
-
 $response = array('html' => '', 'notices' => array(), 'error' => '', 'success' => '', 'extraHtml' => '');
 
 $response['extraHtml'] = getBookingSummary();

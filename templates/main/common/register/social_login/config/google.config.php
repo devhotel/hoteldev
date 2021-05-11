@@ -27,7 +27,7 @@ $apiConfig = array(
     // OAuth2 Settings, you can get these keys at https://code.google.com/apis/console
     'oauth2_client_id' => '726299600516-d0td6ivb0dlrmd7ekgfv7gnuo9r0n961.apps.googleusercontent.com',
     'oauth2_client_secret' => 'nq8fPxKbx9w87aZTqaYWtz_C',
-    'oauth2_redirect_uri' => 'https://devhotel.fitser.com/templates/main/common/register/google_callback.php',
+    'oauth2_redirect_uri' => 'https://devhotel.fitser.com/templates/gupta/common/register/google_callback.php',
 
     // The developer key, you get this at https://code.google.com/apis/console
     'developer_key' => '',

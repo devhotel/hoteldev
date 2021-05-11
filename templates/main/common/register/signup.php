@@ -179,9 +179,9 @@ if(isset($_GET['token']) && isset($_GET['id']) && is_numeric($_GET['id'])){
         			<p style="margin: 0 0 10px;">We hope to host you in the future.</p>
         			<p style="margin: 0 0 10px;">Kindly <a href="'.getUrl(true).DOCBASE.'login" style="color: #00767b;text-align: center;font-weight: bold;display: inline-block;">log-in</a> to continue</p>
         	     </td></tr>';
-                $from_email ='welcome@hms.com';
-                $from_name = 'HMS';
-                if(sendMail($email, $name, 'Welcome to HMS', $mailContent,'','',$from_email,$from_name) !== false){
+                $from_email ='welcome@guptahotels.com';
+                $from_name = 'Gupta Hotels';
+                if(sendMail($email, $name, 'Welcome to Gupta Hotels', $mailContent,'','',$from_email,$from_name) !== false){
                     $response['success'] = $texts['ACCOUNT_CREATED'];
                 }else{
                     $response['error'] = $texts['ACCOUNT_CREATE_FAILURE'].'!!';

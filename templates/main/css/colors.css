@@ -16,9 +16,6 @@ a p {
     background: #f8f8f8;
     min-height: 250px;
 }
-#sidebar {
-	position: static !important;
-}
 /***************** BOOTSTRAP *****************/
 .btn-primary {
     /*background: #144071;*/

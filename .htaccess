@@ -25,10 +25,7 @@
     </FilesMatch>
     Header append Vary User-Agent
     <FilesMatch "\.(ttf|otf|eot|woff|font.css)$">
-        Header always set Access-Control-Allow-Origin: "*"
-        Header always set Access-Control-Allow-Methods "POST, GET, PUT, DELETE, OPTIONS"
-        Header always set Access-Control-Allow-Headers "X-Requested-With, content-type, accessToken"
-        #Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
     <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
         Header set Cache-Control "max-age=31557600, public"
@@ -69,7 +66,6 @@ AddDefaultCharset UTF-8
     
     RewriteCond %{HTTPS} off
     RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-    #RewriteRule ^(.*)$ http%1://%{HTTP_HOST}/$1 [R=301,L]
 
     RewriteCond %{REQUEST_URI} /admin/
     RewriteRule .* - [S=2]
