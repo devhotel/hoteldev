@@ -25,7 +25,10 @@
     </FilesMatch>
     Header append Vary User-Agent
     <FilesMatch "\.(ttf|otf|eot|woff|font.css)$">
-        Header set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Origin: "*"
+        Header always set Access-Control-Allow-Methods "POST, GET, PUT, DELETE, OPTIONS"
+        Header always set Access-Control-Allow-Headers "X-Requested-With, content-type, accessToken"
+        #Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
     <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
         Header set Cache-Control "max-age=31557600, public"
