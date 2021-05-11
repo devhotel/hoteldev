@@ -1,5 +1,8 @@
 <IfModule mod_deflate.c>
-  
+    <IfModule mod_filter.c>
+        SetOutputFilter DEFLATE
+        AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+    </ifModule>
     BrowserMatch ^Mozilla/4 gzip-only-text/html
     BrowserMatch ^Mozilla/4\.0[678] no-gzip
     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
@@ -28,7 +31,7 @@
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
     <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
-        Header set Cache-Control "max-age=31557600, public"
+        Header set Cache-Control "max-age=2592000, public"
     </FilesMatch>
     <FilesMatch "\.(js)$">
         Header set Cache-Control "max-age=2592000, private"
@@ -48,7 +51,6 @@ AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    
     RewriteBase /
     RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
     RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
@@ -62,15 +64,14 @@ AddDefaultCharset UTF-8
     RewriteCond %{QUERY_STRING} (GLOBALS|REQUEST)(=|\[|%) [NC]
     RewriteRule .* - [E=BadQueryString,F]
 
-    RewriteRule ^ - [E=BASE:/] [L]
+    RewriteRule ^ - [E=BASE:{DOCBASE}] [L]
     
-    RewriteCond %{HTTPS} off
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+    RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTPS}:s on:(s) 
+    RewriteRule ^(.*)$ http%1://www.%{HTTP_HOST}/$1 [R=301,L]
 
     RewriteCond %{REQUEST_URI} /admin/
-    RewriteRule .* - [S=2]
-    
-    RewriteCond %{REQUEST_URI} /ghstats/
     RewriteRule .* - [S=2]
 
     RewriteRule ^(.*)index\.php$ %{ENV:BASE}$1 [R=301,L]
@@ -79,10 +80,3 @@ AddDefaultCharset UTF-8
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([a-zA-Z0-9!-/]*)$ %{ENV:BASE} [L]
 </IfModule>
-
-# php -- BEGIN cPanel-generated handler, do not edit
-# Set the “ea-php71” package as the default “PHP” programming language.
-<IfModule mime_module>
-  AddHandler application/x-httpd-ea-php71 .php .php7 .phtml
-</IfModule>
-# php -- END cPanel-generated handler, do not edit
