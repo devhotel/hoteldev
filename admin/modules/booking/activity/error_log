@@ -1,6 +1,0 @@
-[23-Sep-2019 19:13:00 Asia/Kolkata] PHP Notice:  Undefined index: activity in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 124
-[23-Sep-2019 19:13:00 Asia/Kolkata] PHP Notice:  Undefined index: activity in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 125
-[23-Sep-2019 19:13:00 Asia/Kolkata] PHP Notice:  Undefined index: user in /home/guptasfitser/site/public/admin/includes/inc_header_list.php on line 35
-[23-Sep-2019 19:14:23 Asia/Kolkata] PHP Notice:  Undefined index: activity in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 124
-[23-Sep-2019 19:14:23 Asia/Kolkata] PHP Notice:  Undefined index: activity in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 125
-[23-Sep-2019 19:14:23 Asia/Kolkata] PHP Notice:  Undefined index: user in /home/guptasfitser/site/public/admin/includes/inc_header_list.php on line 35
