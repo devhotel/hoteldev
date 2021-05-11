@@ -56,7 +56,7 @@ if(isset($db) && $db !== false){
                   
                     $to = 'sonjoy.bhadra@met-technologies.com';
                     $from = 'reservation@fitser.com';
-                    $body = '<html><head><meta charset="utf-8"></head><body><div style="width: 700px;margin: 0 auto;"><table cellspacing="0" cellpadding="0" style="width: 100%;border:10px solid #fafafa;"><tbody><tr><td style="text-align: center;padding: 20px 20px 0 20px;background: #fff;"><a href="#"><img src="https://devhotel.fitser.com//templates/fitser-hms/images/logo.png" alt="" /></a>
+                    $body = '<html><head><meta charset="utf-8"></head><body><div style="width: 700px;margin: 0 auto;"><table cellspacing="0" cellpadding="0" style="width: 100%;border:10px solid #fafafa;"><tbody><tr><td style="text-align: center;padding: 20px 20px 0 20px;background: #fff;"><a href="#"><img src="https:////templates/fitser-hms/images/logo.png" alt="" /></a>
                     <h2 style="color: #00767b;font-size: 20px;margin: 0 0 10px;line-height: 20px;">Hi, '.$recipient_name.'</h2>
                     <p style="color: #000;font-size: 22px;margin: 0;">'.$subject.'</p>
                     </td>
