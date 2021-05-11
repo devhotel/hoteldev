@@ -6,6 +6,7 @@ require('common/lib.php');
 require('common/define.php');
 
 if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['type'] == 'administrator' || $_SESSION['user']['type'] == 'manager'))){
+
     $uri = preg_split('#[\\\\/]#', REQUEST_URI);
     $err404 = false;
     $ishome = false;
@@ -15,7 +16,9 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
     $article_id = 0;
     $page_alias = '';
     $article_alias = '';
+
     $count_uri = count($uri);
+
     if((LANG_ENABLED && $count_uri == 1) || (!LANG_ENABLED && $uri[0] == '')) $ishome = true;
     else{
         $i = (LANG_ENABLED) ? 1 : 0;
@@ -23,6 +26,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
         if($count_uri > $i+2) err404();
         if(isset($uri[$i+1])) $article_alias = $uri[$i+1];
     }
+    
     foreach($articles as $id => $row){
         //current article
         if($article_alias != '' && $article_alias == substr($row['alias'], strrpos($row['alias'], '/')+1)){
@@ -30,6 +34,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
             $article = $row;
         }
     }
+
     $found = false;
     if(!empty($pages)){
         foreach($pages as $row){
@@ -45,9 +50,6 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
         }
     }
     
-    print_r($_SERVER); die;
-
-
     if($found === false) err404();
 
     $title_tag = $page['title_tag'];
@@ -70,6 +72,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
     $breadcrumbs = array_reverse($breadcrumbs);
 
     $page_model = SYSBASE.'templates/'.TEMPLATE.'/models/'.str_replace('_','/',$page_model).'.php';
+    
     if(is_file($page_model)) include($page_model);
 
     require(SYSBASE.'templates/'.TEMPLATE.'/common/footer.php');

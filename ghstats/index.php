@@ -118,7 +118,8 @@ require_once("includes/fn_module.php"); ?>
                     $to_date = gmdate('d/m/Y', $to_time);
                     
                     if(isset($_GET['from_date'])) $from_date = htmlentities($_GET['from_date'], ENT_QUOTES, 'UTF-8');
-                    if(isset($_GET['to_date'])) $to_date = htmlentities($_GET['to_date'], ENT_QUOTES, 'UTF-8');                    
+                    if(isset($_GET['to_date'])) $to_date = htmlentities($_GET['to_date'], ENT_QUOTES, 'UTF-8');
+                    
                     if($from_date == '') $field_notice['from_date'] = $texts['REQUIRED_FIELD'];
                     else{
                         $time = explode('/', $from_date);
@@ -132,7 +133,7 @@ require_once("includes/fn_module.php"); ?>
                         if(count($time) == 3) $time = gm_strtotime($time[2].'-'.$time[1].'-'.$time[0].' 00:00:00');
                         if(!is_numeric($time)) $field_notice['to_date'] = $texts['REQUIRED_FIELD'];
                         else $to_time = $time;
-                    }                    
+                    }
                 ?>
 
                 <div class="project-tab" id="dashboard">
@@ -141,21 +142,34 @@ require_once("includes/fn_module.php"); ?>
                         <!--<li role="presentation" ><a href="#home1" aria-controls="home1" role="tab" data-toggle="tab">Dashboard</a></li>-->
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Booking</a></li>
                      </ul>
+                    
                       <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane " id="home1">
+                         
+                             
                              <?php
+                             
                                 if( $from_time){
+                                    
                                     if(($to_time-$from_time+86400) > (86400*31)) $to_time = $from_time+(86400*30);
                                     $width = (($to_time-$from_time+86400)/86400)*50;
+                                    
                                     $time_1d_before = $from_time-86400;
                                     $time_1d_before = gm_strtotime(gmdate('Y', $time_1d_before).'-'.gmdate('n', $time_1d_before).'-'.gmdate('j', $time_1d_before).' 00:00:00');
+                                    
                                     $time_1d_after = $to_time+86400;
                                     $time_1d_after = gm_strtotime(gmdate('Y', $time_1d_after).'-'.gmdate('n', $time_1d_after).'-'.gmdate('j', $time_1d_after).' 00:00:00');
+                                    
                                     $from_time = gm_strtotime(gmdate('Y', $from_time).'-'.gmdate('n', $from_time).'-'.gmdate('j', $from_time).' 00:00:00');
                                     $to_time = gm_strtotime(gmdate('Y', $to_time).'-'.gmdate('n', $to_time).'-'.gmdate('j', $to_time).' 00:00:00');
+                                    
                                     $today = gm_strtotime(gmdate('Y').'-'.gmdate('n').'-'.gmdate('j').' 00:00:00');
+                                        
                                     $room_id = 0;
+                                    
+                                    
+                                  
                                  } ?>
                                
                         </div>
@@ -263,29 +277,16 @@ require_once("includes/fn_module.php"); ?>
                                 <!-----------------Latest Booking-------------------->
                         	<?php
                                  //$query_latest_booking = "SELECT *, id as id_booking, COUNT(*) as no_book, sum(case when `status` = 4 then 1 else 0 end) as paid_books  FROM `pm_booking` WHERE `status` = 4 AND  `add_date` >= $from_time  AND add_date <= $time_1d_after";
-                                $tmpFD = explode('/', $from_date);
-                                $tmpTD = explode('/', $to_date);
-                                $newFd = gm_strtotime($tmpFD[2].'-'.$tmpFD[1].'-'.$tmpFD[0]. ' 00:00:00');
-                                $newTd = gm_strtotime($tmpTD[2].'-'.$tmpTD[1].'-'.$tmpTD[0]. ' 23:59:59');
-                                //  echo $newFd . ' '. $newTd; 
-                                 
-                                //  die;
-                                // $query_latest_booking = "SELECT *, id as id_booking, COUNT(*) as no_book, 
-                                // sum(case when `status` = 4 then 1 else 0 end) as paid_books  FROM `pm_booking` 
-                                // WHERE `status` = 4 
-                                // AND  `from_date` >= $from_time  AND from_date < $time_1d_after";
-
                                 $query_latest_booking = "SELECT *, id as id_booking, COUNT(*) as no_book, 
                                 sum(case when `status` = 4 then 1 else 0 end) as paid_books  FROM `pm_booking` 
                                 WHERE `status` = 4 
-                                AND  `from_date` >= $newFd  AND from_date <= $newTd";
-                                if($id_hotel>0 ){ 
-                                    $query_latest_booking .= " AND id_hotel =$id_hotel  "; 
-                                }
-                                $query_latest_booking .= " GROUP BY id_hotel ORDER BY `add_date` ASC ";
-                                //echo $query_latest_booking; die;
-
-
+                                AND  `from_date` >= $from_time  AND from_date < $time_1d_after";
+                                 
+                                 //echo $query_latest_booking;die;
+                        	     if($id_hotel>0 ){ 
+                        	         $query_latest_booking .= " AND id_hotel =$id_hotel  "; 
+                        	     }
+                        	    $query_latest_booking .= " GROUP BY id_hotel  ORDER BY `add_date` ASC ";
                         	    $result_booking = $db->query($query_latest_booking);
                              	?>
                         			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

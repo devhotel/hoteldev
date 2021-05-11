@@ -1,0 +1,1 @@
+[09-Aug-2019 12:39:39 UTC] PHP Warning:  filesize(): stat failed for ../../../../medias/hotel/tmp/a251dc211b24d0d700a2a3fc4b245279/2/5d4d698b9345e/hills-of-eternal-spring.jpg in /home/guptasfitser/site/public/admin/includes/uploadifive/uploader/uploadifive.php on line 69
