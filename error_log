@@ -1,0 +1,4 @@
+[04-Mar-2020 01:13:27 Asia/Kolkata] PHP Notice:  Undefined index: adlts in /home/guptahotels/public_html/templates/gupta/models/booking.php on line 357
+[04-Mar-2020 01:13:27 Asia/Kolkata] PHP Warning:  max(): When only one parameter is given, it must be an array in /home/guptahotels/public_html/templates/gupta/models/booking.php on line 357
+[04-Mar-2020 01:13:27 Asia/Kolkata] PHP Notice:  Undefined index: kids in /home/guptahotels/public_html/templates/gupta/models/booking.php on line 357
+[04-Mar-2020 01:13:27 Asia/Kolkata] PHP Warning:  max(): When only one parameter is given, it must be an array in /home/guptahotels/public_html/templates/gupta/models/booking.php on line 357

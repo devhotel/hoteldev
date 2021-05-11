@@ -1,0 +1,1 @@
+[18-Jun-2019 15:31:26 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module', attribute 'index': '' is not a valid value of the atomic type 'xs:decimal'. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35

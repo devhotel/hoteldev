@@ -1,0 +1,4 @@
+[02-Jul-2019 19:59:56 Asia/Kolkata] PHP Fatal error:  Call to undefined function array_key_first() in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 460
+[05-Feb-2020 08:08:30 UTC] PHP Notice:  Use of undefined constant TIME_ZONE - assumed 'TIME_ZONE' in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:08:30 UTC] PHP Notice:  date_default_timezone_set(): Timezone ID 'TIME_ZONE' is invalid in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:08:30 UTC] PHP Notice:  Undefined index: checked_out in /home/guptahotels/public_html/testTwoPointO/admin/modules/default/list.php on line 1401

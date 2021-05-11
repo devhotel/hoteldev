@@ -1,0 +1,62 @@
+[12-Jun-2019 17:28:06 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': [facet 'enumeration'] The value 'password' is not an element of the set {'mail', 'numeric', 'none'}. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[12-Jun-2019 17:28:06 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': 'password' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[19-Jun-2019 15:10:34 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/guptasfitser/site/public/admin/modules/default/form.php:187) in /home/guptasfitser/site/public/admin/modules/default/form.php on line 398
+[22-Jul-2019 05:33:06 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'type': [facet 'enumeration'] The value 'number' is not an element of the set {'start', 'end', 'hidden', 'gps', 'box', 'datetime', 'date', 'add_date', 'edit_date', 'text', 'alias', 'password', 'textarea', 'select', 'multiselect', 'filelist', 'checkbox', 'radio', 'separator'}. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[22-Jul-2019 05:33:06 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'type': 'number' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[12-Sep-2019 12:31:41 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/ghstats/includes/fn_module.php on line 117
+[12-Sep-2019 12:31:41 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/guptasfitser/site/public/ghstats/includes/fn_module.php:117) in /home/guptasfitser/site/public/ghstats/modules/default/common.php on line 29
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 16
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 16
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 21
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 23
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 52
+[12-Sep-2019 12:37:37 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/inc_top.php on line 65
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:44:24 Asia/Kolkata] PHP Notice:  Undefined index: admin in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 149
+[12-Sep-2019 12:58:15 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'options': Character content other than whitespace is not allowed because the content type is 'element-only'. in /home/guptasfitser/site/public/ghstats/includes/fn_list.php on line 20
+[12-Sep-2019 13:02:04 Asia/Kolkata] PHP Notice:  Undefined variable: permissions in /home/guptasfitser/site/public/ghstats/modules/default/common.php on line 28
+[12-Sep-2019 13:02:04 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/guptasfitser/site/public/ghstats/modules/default/common.php on line 28
+[12-Sep-2019 13:02:04 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/guptasfitser/site/public/ghstats/modules/default/common.php:28) in /home/guptasfitser/site/public/ghstats/modules/default/common.php on line 29
+[12-Sep-2019 13:05:12 Asia/Kolkata] PHP Warning:  opendir(/home/guptasfitser/site/public/stats_user/modules): failed to open dir: No such file or directory in /home/guptasfitser/site/public/ghstats/includes/fn_module.php on line 21
+[12-Sep-2019 17:03:45 Asia/Kolkata] PHP Parse error:  syntax error, unexpected ')' in /home/guptasfitser/site/public/ghstats/modules/default/form.php on line 1109
+[12-Sep-2019 17:12:29 Asia/Kolkata] PHP Notice:  Undefined variable: id in /home/guptasfitser/site/public/ghstats/modules/default/form.php on line 87
+[12-Sep-2019 17:12:29 Asia/Kolkata] PHP Notice:  Undefined variable: id in /home/guptasfitser/site/public/ghstats/modules/default/form.php on line 533
+[12-Sep-2019 17:12:29 Asia/Kolkata] PHP Notice:  Undefined variable: id in /home/guptasfitser/site/public/ghstats/modules/default/form.php on line 578
+[12-Sep-2019 17:57:10 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/guptasfitser/site/public/ghstats/modules/default/common.php:14) in /home/guptasfitser/site/public/ghstats/modules/default/common.php on line 106

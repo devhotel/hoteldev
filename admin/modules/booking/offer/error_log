@@ -1,0 +1,42 @@
+[13-May-2019 17:36:45 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module', attribute 'hotel': The attribute 'hotel' is not allowed. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[13-May-2019 17:36:45 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module': The attribute 'home' is required but missing. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[13-May-2019 17:43:10 Asia/Kolkata] PHP Catchable fatal error:  Object of class DOMElement could not be converted to string in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 37
+[13-May-2019 17:43:19 Asia/Kolkata] PHP Catchable fatal error:  Object of class DOMElement could not be converted to string in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 37
+[13-May-2019 17:44:08 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module', attribute 'hotel': The attribute 'hotel' is not allowed. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[13-May-2019 17:44:08 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module': The attribute 'home' is required but missing. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[13-May-2019 17:48:09 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module', attribute 'hotel': The attribute 'hotel' is not allowed. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[13-May-2019 17:48:09 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'module': The attribute 'home' is required but missing. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[30-Jul-2019 20:29:29 Asia/Kolkata] PHP Notice:  Undefined index: user in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 117
+[30-Jul-2019 20:29:29 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/guptasfitser/site/public/admin/includes/fn_module.php:117) in /home/guptasfitser/site/public/admin/modules/default/common.php on line 29
+[06-Aug-2019 12:02:50 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 14:57:06 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 14:57:09 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 14:57:12 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 14:57:14 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 14:57:17 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:47:55 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in /home/guptasfitser/site/public/common/lib.php:168
+Stack trace:
+#0 /home/guptasfitser/site/public/common/lib.php(208): db_descr_table(Object(DB), 'pm_offer', 'name')
+#1 /home/guptasfitser/site/public/common/lib.php(475): db_column_type(Object(DB), 'pm_offer', 'name')
+#2 /home/guptasfitser/site/public/admin/modules/default/list.php(122): db_getRequestSelect(Object(DB), 'pm_offer', Array, '', '', 'name asc')
+#3 /home/guptasfitser/site/public/admin/modules/default/common.php(99): require_once('/home/guptasfit...')
+#4 /home/guptasfitser/site/public/admin/modules/booking/offer/index.php(1): require_once('/home/guptasfit...')
+#5 {main}
+  thrown in /home/guptasfitser/site/public/common/lib.php on line 168
+[06-Aug-2019 15:59:37 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:40 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:42 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:43 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:44 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:46 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:48 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:51 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:53 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:55 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:56 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:58 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 15:59:59 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 16:00:01 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 16:00:03 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 16:00:05 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97
+[06-Aug-2019 16:00:08 Asia/Kolkata] PHP Notice:  Undefined index: lang in /home/guptasfitser/site/public/admin/modules/default/form.php on line 97

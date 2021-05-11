@@ -1,0 +1,80 @@
+[11-Jun-2019 21:30:20 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'value': The attribute 'value' is not allowed. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[21-Jun-2019 17:40:15 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 84 and form in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 200 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:15 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 83 and module in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 207 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:15 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag form line 20 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:15 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag module line 2 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:17 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 84 and form in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 200 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:17 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 83 and module in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 207 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:17 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag form line 20 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:17 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag module line 2 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[02-Jul-2019 20:09:28 Asia/Kolkata] PHP Notice:  Undefined variable: checked in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 470
+[02-Jul-2019 20:09:28 Asia/Kolkata] PHP Notice:  Undefined variable: checked in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 470
+[05-Jul-2019 15:36:01 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:36:01 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:36:13 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:36:13 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:46:34 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:46:34 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:46:45 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:46:45 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:46:49 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:46:49 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:00 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:00 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:23 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:23 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:32 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:32 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:38 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:47:38 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:02 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:02 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:23 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:23 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:28 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:28 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:33 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:33 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:37 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:37 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:42 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:48:42 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:49:01 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:49:01 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:50:11 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 15:50:11 Asia/Kolkata] PHP Notice:  Undefined index: id_hotel in /home/guptasfitser/site/public/admin/includes/fn_form.php on line 206
+[05-Jul-2019 16:42:59 Asia/Kolkata] PHP Fatal error:  Call to undefined function var_dumo() in /home/guptasfitser/site/public/admin/modules/booking/rate/get_hotel.php on line 21
+[05-Feb-2020 08:06:58 UTC] PHP Notice:  Use of undefined constant TIME_ZONE - assumed 'TIME_ZONE' in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:06:58 UTC] PHP Notice:  date_default_timezone_set(): Timezone ID 'TIME_ZONE' is invalid in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:06:58 UTC] PHP Notice:  Undefined index: checked_out in /home/guptahotels/public_html/testTwoPointO/admin/modules/default/list.php on line 1401
+[05-Feb-2020 08:07:11 UTC] PHP Notice:  Use of undefined constant TIME_ZONE - assumed 'TIME_ZONE' in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:07:11 UTC] PHP Notice:  date_default_timezone_set(): Timezone ID 'TIME_ZONE' is invalid in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:07:11 UTC] PHP Notice:  Undefined index: checked_out in /home/guptahotels/public_html/testTwoPointO/admin/modules/default/list.php on line 1401
+[05-Feb-2020 08:07:21 UTC] PHP Notice:  Use of undefined constant TIME_ZONE - assumed 'TIME_ZONE' in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:07:21 UTC] PHP Notice:  date_default_timezone_set(): Timezone ID 'TIME_ZONE' is invalid in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:07:21 UTC] PHP Notice:  Undefined index: checked_out in /home/guptahotels/public_html/testTwoPointO/admin/modules/default/list.php on line 1401
+[05-Feb-2020 08:07:32 UTC] PHP Notice:  Use of undefined constant TIME_ZONE - assumed 'TIME_ZONE' in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:07:32 UTC] PHP Notice:  date_default_timezone_set(): Timezone ID 'TIME_ZONE' is invalid in /home/guptahotels/public_html/testTwoPointO/common/define.php on line 12
+[05-Feb-2020 08:07:32 UTC] PHP Notice:  Undefined index: checked_out in /home/guptahotels/public_html/testTwoPointO/admin/modules/default/list.php on line 1401
+[06-Feb-2020 17:13:17 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 444
+[06-Feb-2020 17:13:17 Asia/Kolkata] PHP Notice:  Undefined index: selectedRoomPrice in /home/guptahotels/public_html/admin/includes/fn_form.php on line 359
+[06-Feb-2020 17:13:17 Asia/Kolkata] PHP Notice:  Undefined index: selectedMaxPeople in /home/guptahotels/public_html/admin/includes/fn_form.php on line 363
+[06-Feb-2020 17:13:17 Asia/Kolkata] PHP Notice:  Undefined index: selectedRoomPrice in /home/guptahotels/public_html/admin/includes/fn_form.php on line 359
+[06-Feb-2020 17:13:17 Asia/Kolkata] PHP Notice:  Undefined index: selectedMaxPeople in /home/guptahotels/public_html/admin/includes/fn_form.php on line 363
+[06-Feb-2020 17:14:29 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 444
+[06-Feb-2020 17:14:29 Asia/Kolkata] PHP Notice:  Undefined index: selectedRoomPrice in /home/guptahotels/public_html/admin/includes/fn_form.php on line 359
+[06-Feb-2020 17:14:29 Asia/Kolkata] PHP Notice:  Undefined index: selectedMaxPeople in /home/guptahotels/public_html/admin/includes/fn_form.php on line 363
+[06-Feb-2020 17:14:29 Asia/Kolkata] PHP Notice:  Undefined index: selectedRoomPrice in /home/guptahotels/public_html/admin/includes/fn_form.php on line 359
+[06-Feb-2020 17:14:29 Asia/Kolkata] PHP Notice:  Undefined index: selectedMaxPeople in /home/guptahotels/public_html/admin/includes/fn_form.php on line 363
+[06-Feb-2020 17:22:01 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[06-Feb-2020 17:22:25 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[07-Feb-2020 18:49:03 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[13-Feb-2020 13:41:06 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[13-Feb-2020 13:42:23 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[14-Feb-2020 10:01:20 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[14-Feb-2020 10:01:53 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[14-Feb-2020 11:01:41 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[14-Feb-2020 12:16:12 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[14-Feb-2020 14:58:09 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[20-Feb-2020 09:30:17 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454
+[26-Feb-2020 15:10:22 Asia/Kolkata] PHP Notice:  Undefined index: selectedHotelId in /home/guptahotels/public_html/admin/includes/fn_form.php on line 454

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="[HOTELS]" name="hotel" multi="1" library="0" dashboard="1" icon="h-square" ranking="1" home="1" main="0" validation="1" dates="0" release="0" index="0.15">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="20" resizing="1">
+		<big maxw="1400" maxh="800"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="300" maxh="300"/>
+	</medias>
+	
+	<list order="rank">
+        <filter label="[DESTINATION]" name="id_destination">
+            <options table="pm_destination" fieldlabel="name" fieldvalue="id" order="title"></options>
+        </filter>
+		 <filter label="[HOTEL]" name="id">
+            <options table="pm_hotel" fieldlabel="title" fieldvalue="id" order="title" optfilter="id_destination" filtername="id_destination"></options>
+         </filter>
+         <filter label="[STATUS]" name="checked">
+            <options>
+                <option value="1">[PUBLISHED]</option>
+                <option value="2">[NOT_PUBLISHED]</option>
+            </options>
+         </filter>
+
+        <col label="[DESTINATION]" name="id_destination" table="pm_destination" fieldvalue="name" fieldref="id"/>
+		<col label="Hotel Name" name="title" type="none"/>
+		<col label="[SUBTITLE]" name="subtitle" type="none"/>
+		<col label="[CLASS]" name="class" type="none"/>
+		
+	</list>
+	
+	<form>
+        <field multi="0" label="parentDiv" name="div_start" type="divstart" required="0" unique="0" validation="none"/>
+	    <field multi="0" label="[HOTEL_DETAILS]" name="s1" type="separator" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start1" type="divstart" required="0" unique="0" validation="none"/>
+	    <field multi="1" label="Hotel Id" name="hotelid" type="text" required="1" unique="1" validation="none"/>
+        <field multi="0" label="Div End" name="div_end1" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start2" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="1" label="Hotel Name" name="title" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end2" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start3" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="1" label="[SUBTITLE]" name="subtitle" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end3" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start4" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="1" label="[ALIAS]" name="alias" type="alias" required="1" unique="1" validation="none"/>
+        <field multi="0" label="Div End" name="div_end4" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start5" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[ACCOMMODATION]" name="id_accommodation" type="select" required="1" unique="0" validation="none">
+            <options table="pm_accommodation" fieldlabel="name" fieldvalue="id" order="name"></options>
+        </field>
+        <field multi="0" label="Div End" name="div_end5" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start6" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[PHONE]" name="phone" type="text" required="1" unique="0" validation="phone"/>
+        <field multi="0" label="Div End" name="div_end6" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start7" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[EMAIL]" name="email" type="text" required="1" unique="0" validation="mail"/>
+        <field multi="0" label="Div End" name="div_end7" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start8" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[WEB]" name="web" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end8" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end" type="divend" required="0" unique="0" validation="none"/>
+
+  
+        <field multi="0" label="parentDiv" name="div_start9" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="0" label="[HOTEL_DESCRIPTION]" name="s2" type="separator" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv innerDivFull" name="div_start10" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="1" label="[DESCRIPTION]" name="descr" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end10" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end9" type="divend" required="0" unique="0" validation="none"/>
+        
+
+        <field multi="0" label="parentDiv" name="div_start11" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="0" label="[HOTEL_FACILITIES]" name="s3" type="separator" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv innerDivFull" name="div_start12" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="0" label="[FACILITIES]" name="facilities" type="multiselect" required="0" unique="0" validation="none">
+            <options table="pm_facility" fieldlabel="name" fieldvalue="id" order="name"></options>
+        </field>
+        <field multi="0" label="Div End" name="div_end12" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv innerDivFull" name="div_start13" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="0" label="[CLASS]" name="class" type="radio" required="0" unique="0" validation="none">
+            <options>
+                <option value="0">none</option>
+                <option value="1">1 star</option>
+                <option value="2">2 stars</option>
+                <option value="3">3 stars</option>
+                <option value="4">4 stars</option>
+                <option value="5">5 stars</option>
+            </options>
+        </field>
+        <field multi="0" label="Div End" name="div_end13" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end11" type="divend" required="0" unique="0" validation="none"/>
+
+
+        <field multi="0" label="parentDiv" name="div_start14" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[HOTEL_ADDRESS]" name="s4" type="separator" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start15" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[DESTINATION]" name="id_destination" type="select" required="1" unique="0" validation="none">
+            <options table="pm_destination" fieldlabel="name" fieldvalue="id" order="name"></options>
+        </field>
+        <field multi="0" label="Div End" name="div_end15" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start16" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[ADDRESS]" name="address" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end16" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start17" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[ADDRESS_2]" name="address_2" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end17" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start18" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[CITY]" name="city" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end18" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start19" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[POSTCODE]" name="zipcode" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end19" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start20" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[STATE]" name="state" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end20" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start21" type="divstart" required="0" unique="0" validation="none"/>
+	    <field multi="0" label="[COUNTRY]" name="country_code" type="select" required="1" unique="0" validation="none">
+            <options table="pm_country" fieldlabel="name" fieldvalue="code" order="name"></options>
+        </field>
+        <field multi="0" label="Div End" name="div_end21" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end14" type="divend" required="0" unique="0" validation="none"/>
+
+
+
+        <field multi="0" label="parentDiv" name="div_start22" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="0" label="[HOTEL_GPS]" name="s5" type="separator" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[HOTEL_GPS_CONTENT]" name="g1" type="gps" required="0" unique="0" validation="none"/>
+		<!-- <field multi="0" label="lat_long_start" name="st1" type="start" required="0" unique="0" validation="none"/> -->
+        <field multi="0" label="innerDiv" name="div_start23" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[LATITUDE]" name="lat" type="text" required="1" unique="0" validation="numeric"/>
+        <field multi="0" label="Div End" name="div_end23" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv" name="div_start24" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="[LONGITUDE]" name="lng" type="text" required="1" unique="0" validation="numeric"/>
+        <field multi="0" label="Div End" name="div_end24" type="divend" required="0" unique="0" validation="none"/>
+		<!-- <field multi="0" label="lat_long_end" name="ed1" type="end" required="0" unique="0" validation="none"/> -->
+        <field multi="0" label="Div End" name="div_end22" type="divend" required="0" unique="0" validation="none"/>
+
+
+		<!--<field multi="0" label="[PAYPAL_EMAIL]" name="paypal_email" type="text" required="0" unique="0" validation="none"/>-->
+        <field multi="0" label="parentDiv" name="div_start25" type="divstart" required="0" unique="0" validation="none"/>
+		<field multi="0" label="Hotel policy" name="s7" type="separator" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv innerDivFull" name="div_start26" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="1" label="Booking policy" name="book_policy" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end26" type="divend" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv innerDivFull" name="div_start27" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="1" label="General policies" name="general_policies" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end27" type="divend" required="0" unique="0" validation="none"/>
+		<field multi="0" label="Div End" name="div_end25" type="divend" required="0" unique="0" validation="none"/>
+
+
+        <field multi="0" label="parentDiv" name="div_start28" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Cancellation policy" name="s8" type="separator" required="0" unique="0" validation="none"/>
+        <field multi="0" label="innerDiv innerDivFull" name="div_start29" type="divstart" required="0" unique="0" validation="none"/>
+        <field multi="1" label="Cancellation policy" name="cancel_policy" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Div End" name="div_end29" type="divend" required="0" unique="0" validation="none"/>
+        <table label="Cancellation Policies" name="hotel_cancel_policy" fieldref="id_hotel" multi="0">
+            <field multi="0" label="innerDiv innerDivFull" name="div_start" type="divstart" required="0" unique="0" validation="none"/>
+            <field multi="0" label="Duration type" name="duration_type" type="select" required="0" unique="0" validation="none">
+              <options>
+                <option value="day">Days</option>
+                <option value="hours">Hours</option>
+              </options>
+            </field>
+            <field multi="0" label="Values" name="value" type="text" required="0" unique="0" validation="none"/>
+            <field multi="0" label="Fees" name="fees" type="text" required="0" unique="0" validation="numeric"/>
+            <field multi="0" label="[PARCENTAGE_FIXED]" name="fees_type" type="select" required="0" unique="0" validation="none">
+            <options>
+                <option value="parcentage">PARCENTAGE</option>
+                <option value="fixed">FIXED</option>
+            </options>
+           </field>
+           <field multi="0" label="2" name="div_end" type="divend" required="0" unique="0" validation="none"/>
+        </table>
+
+        <table label="Set Feedback Params" name="feedback_params" fieldref="id_hotel" multi="0">
+            <field multi="0" label="parentDiv" name="div_start" type="divstart" required="0" unique="0" validation="none"/>
+            <field multi="0" label="Feedback Params" name="seperator" type="separator" required="0" unique="0" validation="none"/>
+            <field multi="0" label="Params" name="params" type="text" required="0" unique="0" validation="none"/>
+            <field multi="0" label="2" name="div_end" type="divend" required="0" unique="0" validation="none"/>
+        </table>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="no_access"/>
+        <user type="editor" permissions="no_access"/>
+        <user type="hotel" permissions="all"/>
+    </roles>
+</module>
