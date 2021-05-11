@@ -2,6 +2,7 @@
 /**
  * Script called (Ajax) on reset password
  */
+echo "ok"; die;
 require_once("../../../../common/lib.php");
 require_once("../../../../common/define.php");
 $response = array("html" => "", "notices" => array(), "error" => "", "success" => "", "code" => "");
