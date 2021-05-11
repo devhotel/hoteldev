@@ -19,7 +19,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
 
     $count_uri = count($uri);
 
-    echo $uri; die;
+    pr($uri); die;
 
     if((LANG_ENABLED && $count_uri == 1) || (!LANG_ENABLED && $uri[0] == '')) $ishome = true;
     else{

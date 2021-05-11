@@ -10,6 +10,12 @@ class DB extends PDO
         return $this->query('SELECT FOUND_ROWS()')->fetchColumn();
     }
 }
+function pr($data, $flag = TRUE){
+    print_r($data);
+    if($flag):
+        die;
+    endif;
+}
 /**
  * autoload()
  * 
