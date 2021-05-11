@@ -68,7 +68,8 @@ AddDefaultCharset UTF-8
     RewriteRule ^ - [E=BASE:/] [L]
     
     RewriteCond %{HTTPS} off
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+    #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+    RewriteRule ^(.*)$ http%1://%{HTTP_HOST}/$1 [R=301,L]
 
     RewriteCond %{REQUEST_URI} /admin/
     RewriteRule .* - [S=2]
