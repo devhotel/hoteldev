@@ -1441,8 +1441,8 @@ function getFromTemplate($path, $docbase = true)
     if (TEMPLATE == 'default')
         return $base . $default_path;
     else {
-        //$template_path = 'templates/' . TEMPLATE . '/' . $path;
-        $template_path = 'api/v4/' . $path;
+        $template_path = 'templates/' . TEMPLATE . '/' . $path;
+        //$template_path = 'api/v4/' . $path;
         if (is_file(SYSBASE . $template_path))
             return $base . $template_path;
         else {
