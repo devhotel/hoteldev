@@ -21,11 +21,11 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
         $i = (LANG_ENABLED) ? 1 : 0;
         $page_alias = trim(LANG_ALIAS.$uri[$i], '/\\');
 
-        echo $page_alias; die;
+        //echo $page_alias; die;
         if($count_uri > $i+2) err404();
         if(isset($uri[$i+1])) $article_alias = $uri[$i+1];
     }
-    
+    print_r($articles); die;
     foreach($articles as $id => $row){
         //current article
         if($article_alias != '' && $article_alias == substr($row['alias'], strrpos($row['alias'], '/')+1)){
