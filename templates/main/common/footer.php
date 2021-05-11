@@ -353,7 +353,7 @@ $(window).scroll(function() {
       if (search_str.length >= minlength) {
         $.ajax({
           type: "GET",
-          url: "<?php echo getFromTemplate('common/get_ajax_hotel_location.php'); ?>",
+          url: "<?php echo getFromTemplateNew('common/get_ajax_hotel_location.php'); ?>",
           data: {
             'search_str': search_str
           },
