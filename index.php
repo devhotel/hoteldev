@@ -2,11 +2,12 @@
 /**
  * Display the right model of the template according to the url
  */
-echo "sljkhdjas"; die;
 require('common/lib.php');
 require('common/define.php');
 
 if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['type'] == 'administrator' || $_SESSION['user']['type'] == 'manager'))){
+
+    echo "a"; die;
 
     $uri = preg_split('#[\\\\/]#', REQUEST_URI);
     $err404 = false;
@@ -78,6 +79,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
 
     require(SYSBASE.'templates/'.TEMPLATE.'/common/footer.php');
 }else{
+    echo "aa"; die;
     header('HTTP/1.1 503 Service Temporarily Unavailable');
     if(DOCBASE.REQUEST_URI != DOCBASE) header('Location: '.DOCBASE);
     require(SYSBASE.'templates/'.TEMPLATE.'/maintenance.php');
