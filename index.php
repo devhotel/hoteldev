@@ -30,7 +30,6 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
             $article = $row;
         }
     }
-    echo SYSBASE; die; die;
     $found = false;
     if(!empty($pages)){
         foreach($pages as $row){
@@ -46,6 +45,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
         }
     }
     
+    echo $found; die; die;
     if($found === false) err404();
 
     $title_tag = $page['title_tag'];
