@@ -89,7 +89,7 @@
       $('#resspin').show();
       $('#vspin').show();
       $.ajax({
-        url: "<?php echo getFromTemplate("common/register/otp.php", false); ?>",
+        url: "<?php echo getFromTemplate("common/register/otp.php"); ?>",
         type: "POST",
         cache: false,
         data: {
