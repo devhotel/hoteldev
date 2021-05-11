@@ -1434,15 +1434,14 @@ function formatPrice($price, $currency = CURRENCY_SIGN)
  *
  * @return string
  */
-function getFromTemplate($path, $docbase = true)
+function getFromTemplateNew($path, $docbase = true)
 {
     $base = $docbase ? DOCBASE : SYSBASE;
     $default_path = 'api/v4/' . $path;
     if (TEMPLATE == 'default')
         return $base . $default_path;
     else {
-        $template_path = 'templates/' . TEMPLATE . '/' . $path;
-        //$template_path = 'api/v4/' . $path;
+        $template_path = 'api/v4/' . $path;
         if (is_file(SYSBASE . $template_path))
             return $base . $template_path;
         else {
@@ -1453,7 +1452,7 @@ function getFromTemplate($path, $docbase = true)
         }
     }
 }
-function getFromTemplateBack($path, $docbase = true)
+function getFromTemplate($path, $docbase = true)
 {
     $base = $docbase ? DOCBASE : SYSBASE;
     $default_path = 'templates/default/' . $path;
