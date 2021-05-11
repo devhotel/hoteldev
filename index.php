@@ -20,8 +20,6 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
     else{
         $i = (LANG_ENABLED) ? 1 : 0;
         $page_alias = trim(LANG_ALIAS.$uri[$i], '/\\');
-
-        //echo $page_alias; die;
         if($count_uri > $i+2) err404();
         if(isset($uri[$i+1])) $article_alias = $uri[$i+1];
     }
@@ -33,7 +31,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
             $article = $row;
         }
     }
-print_r($pages); die;
+    echo SYSBASE; die; die;
     $found = false;
     if(!empty($pages)){
         foreach($pages as $row){
