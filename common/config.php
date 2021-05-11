@@ -10,7 +10,7 @@ define('ADMIN_LANG_FILE', 'en.ini');
 define('ENABLE_COOKIES_NOTICE', '0');
 define('MAINTENANCE_MODE', '0');
 define('MAINTENANCE_MSG', '<h1><i class=\"fa fa-rocket\"></i> Coming soon...</h1><p>We are sorry, our website is down for maintenance.</p>');
-define('TEMPLATE', 'main');
+define('TEMPLATE', 'gupta');
 define('THEME_COLOR', '#07a0a6');
 define('OWNER', 'HMS');
 define('EMAIL', 'reservation@fitser.com');

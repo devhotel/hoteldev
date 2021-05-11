@@ -1,0 +1,155 @@
+[13-May-2019 17:10:30 Asia/Kolkata] PHP Fatal error:  Call to a member function fetchAll() on boolean in /home/guptasfitser/site/public/common/lib.php on line 168
+[14-May-2019 12:55:57 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'list': Character content other than whitespace is not allowed because the content type is 'element-only'. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 12:56:50 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'list': Character content other than whitespace is not allowed because the content type is 'element-only'. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 12:56:54 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'list': Character content other than whitespace is not allowed because the content type is 'element-only'. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:11:06 Asia/Kolkata] PHP Fatal error:  Call to a member function fetchAll() on boolean in /home/guptasfitser/site/public/common/lib.php on line 168
+[14-May-2019 19:15:02 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:15:40 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:16:23 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:16:35 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:17:01 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:17:45 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:18:07 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:18:09 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 19:19:09 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:10:54 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'option': This element is not expected. Expected is ( options ). in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:10:54 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'option': This element is not expected. Expected is ( options ). in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:13:57 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': '' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:13:57 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': '' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:13:57 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': '' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:14:03 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': '' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:14:03 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': '' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[14-May-2019 20:14:03 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field', attribute 'validation': '' is not a valid value of the local atomic type. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[15-May-2019 14:08:10 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[15-May-2019 14:08:15 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[15-May-2019 14:08:16 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'field': This element is not expected. in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[05-Jun-2019 19:19:45 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/guptasfitser/site/public/admin/modules/default/list.php on line 696
+[05-Jun-2019 19:20:55 Asia/Kolkata] PHP Parse error:  syntax error, unexpected end of file in /home/guptasfitser/site/public/admin/modules/default/list.php on line 708
+[06-Jun-2019 20:51:35 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/guptasfitser/site/public/common/lib.php on line 320
+[21-Jun-2019 17:38:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 84 and form in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 210 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 83 and module in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 217 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag form line 20 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 218 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag module line 2 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 218 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:52 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 84 and form in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 210 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:52 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 83 and module in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 217 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:52 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag form line 20 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 218 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:38:52 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag module line 2 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 218 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 84 and form in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 200 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 83 and module in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 207 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag form line 20 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:12 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag module line 2 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:14 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 84 and form in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 200 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:14 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Opening and ending tag mismatch: field line 83 and module in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 207 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:14 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag form line 20 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[21-Jun-2019 17:40:14 Asia/Kolkata] PHP Warning:  DOMDocument::load(): Premature end of data in tag module line 2 in /home/guptasfitser/site/public/admin/modules/booking/room/config.xml, line: 208 in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 34
+[28-Jun-2019 13:12:47 Asia/Kolkata] PHP Warning:  DOMDocument::schemaValidate(): Element 'medias': Missing child element(s). Expected is ( big ). in /home/guptasfitser/site/public/admin/includes/fn_module.php on line 35
+[28-Jun-2019 13:15:10 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:16:12 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:17:52 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:17:58 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:19:07 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:19:16 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:24:18 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:32:45 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:33:06 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:33:50 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:35:21 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:35:24 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:35:56 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:36:03 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:38:22 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:38:28 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:38:46 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:38:50 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:38:53 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:38:59 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 13:39:12 Asia/Kolkata] PHP Notice:  Undefined index: rank in /home/guptasfitser/site/public/admin/modules/default/list.php on line 388
+[28-Jun-2019 15:23:48 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch() on boolean in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 8
+[28-Jun-2019 15:26:57 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch() on boolean in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 8
+[28-Jun-2019 15:26:59 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch() on boolean in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 8
+[28-Jun-2019 15:40:04 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 13
+[28-Jun-2019 15:40:04 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 113
+[28-Jun-2019 15:43:30 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[28-Jun-2019 15:43:30 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 114
+[28-Jun-2019 15:46:11 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[28-Jun-2019 15:46:11 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 116
+[28-Jun-2019 15:46:40 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[28-Jun-2019 15:46:40 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 116
+[28-Jun-2019 15:58:21 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[28-Jun-2019 15:58:21 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 116
+[28-Jun-2019 20:06:11 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[28-Jun-2019 20:06:11 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 116
+[28-Jun-2019 20:17:12 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[28-Jun-2019 20:17:12 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 116
+[01-Jul-2019 15:51:43 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 15:51:43 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 116
+[01-Jul-2019 15:52:58 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 15:52:58 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 131
+[01-Jul-2019 16:03:35 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 16:03:35 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 121
+[01-Jul-2019 16:03:44 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 16:03:44 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 121
+[01-Jul-2019 16:12:28 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 16:12:28 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[01-Jul-2019 16:14:16 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 16:14:16 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[01-Jul-2019 16:55:29 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 16:55:29 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[01-Jul-2019 20:15:07 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 20:15:07 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[01-Jul-2019 20:48:50 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 20:48:50 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[01-Jul-2019 20:56:10 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 20:56:10 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[01-Jul-2019 21:01:22 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[01-Jul-2019 21:01:22 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[04-Jul-2019 16:38:14 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[04-Jul-2019 16:38:14 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 13:18:53 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 13:18:53 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 17:48:09 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 17:48:09 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 17:57:04 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 17:57:04 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 17:58:51 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 17:58:51 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 18:03:15 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 18:03:15 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 18:07:14 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 18:07:14 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[09-Jul-2019 18:07:56 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[09-Jul-2019 18:07:56 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:35:15 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:35:15 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:35:30 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:35:30 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:35:45 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:35:45 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:36:27 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:36:27 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:36:33 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:36:33 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:41:05 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:41:05 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:41:31 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:41:31 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:42:15 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:42:15 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:44:42 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:44:42 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[11-Jul-2019 16:46:37 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[11-Jul-2019 16:46:37 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[15-Jul-2019 19:17:54 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[15-Jul-2019 19:17:54 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[16-Jul-2019 16:58:11 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[16-Jul-2019 16:58:11 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[16-Jul-2019 16:58:16 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[16-Jul-2019 16:58:16 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[16-Jul-2019 22:01:26 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[16-Jul-2019 22:01:26 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[22-Jul-2019 05:54:59 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[22-Jul-2019 05:54:59 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[22-Jul-2019 15:14:05 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[22-Jul-2019 15:14:05 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
+[30-Jul-2019 17:30:38 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 14
+[30-Jul-2019 17:30:38 Asia/Kolkata] PHP Notice:  Undefined variable: id_booking in /home/guptasfitser/site/public/admin/modules/booking/wallet/wallet.php on line 126
